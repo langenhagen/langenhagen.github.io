@@ -86,7 +86,7 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
     <p class=\"with_margin\"> \
         Design Patterns, Software Architecture, Multi-Threading, UI, Best Practices, Agile, Clean Code, Simplicity \
     </p> \
-    <p>Look <a href="https://langenhagen.github.io/Expertises-Gantt/">here</a> for a list of what I did and do over the Years.</p> \
+    <p>Look <a href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the Years.</p> \
     ";
 
 var WantHTML =
