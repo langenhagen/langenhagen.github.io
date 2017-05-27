@@ -5,7 +5,7 @@ var MeHTML =
 "<p>Hi there,</p> \
 <br> \
 <p> \
-my name is Andreas and I am a little software developer with a tendency towards C++ and CG.<br> \
+my name is Andreas and I am a little software developer with a tendency towards C++, CG and AI.<br> \
 Please, make yourself at home and have a little look if you like. \
 </p>";
 
