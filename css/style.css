@@ -1,0 +1,165 @@
+/* My Personal Page css file.
+ *
+ * author: langenhagen
+ * version: 160110
+ */
+
+body {
+    background-color:black;	
+    font-family:"trebuchet ms";
+    text-align:left;
+    font-size:24px;
+    font-weight:normal;
+    color:white;
+    line-height: 100%;
+    margin:0px;
+    padding:0px;
+    overflow:hidden
+}
+
+canvas {
+    position:fixed;
+    z-index: -10;
+    width:100%;
+    height:100%;
+}
+
+a {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+p {
+    margin-left: 0px;
+    background-color:black;
+    display:inline-block;
+}
+
+div {
+    background-color:transparent;
+    z-index:1000;    
+}
+
+
+.link_container {
+    float:left;
+    position:absolute;
+    top: 9%;
+    width:18%;
+}
+
+.active_link {
+    cursor: default;
+}
+
+.active_link span {
+    background-color:black;
+}
+
+.blocked_link {
+    visibility: hidden;
+}
+
+.with_margin {
+    margin-left: 40px;
+    margin-top: 0px;
+}
+
+.fineprint {
+    font-size: 18px;
+}
+
+
+@keyframes scaleAnim {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+
+#status {
+    position:absolute;
+    /*top: 38.2%;*/
+    top: 45.0%;
+    left: 0;
+    width:100%;
+    text-align: center;
+    animation-duration: 0.7s;
+    animation-name: scaleAnim;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+#status.animationOff {
+    animation-name: none;
+}
+
+
+#content_container {
+    float:left;
+    position:absolute;
+    z-index:0;
+    top:15%;
+    left:18%;
+    height:84%;
+    width:82%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#content {
+    z-index:-10;
+    display:inline;
+    line-height: 150%;
+}
+
+#vita_link_left {
+    top: 47.75%;
+    left: 33%;
+    font-size:28px;
+    position:fixed;
+}
+
+#vita_link_right {
+    top: 47.75%;
+    left: 65%;
+    font-size:28px;
+    position:fixed;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        font-size:12px;
+    }
+    
+    .fineprint {
+        font-size: 10px;
+    }
+    
+    #vita_link_left {
+        font-size:14px;
+    }
+
+    #vita_link_right {
+        font-size:14px;
+    }
+    
+    .link_container {
+        width:30%;
+    }
+    
+    #content_container {
+        left:30%;
+        width:70%;
+    }
+}
