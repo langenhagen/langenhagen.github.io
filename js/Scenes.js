@@ -86,7 +86,7 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
     <p class=\"with_margin\"> \
         Design Patterns, Software Architecture, Multi-Threading, UI, Best Practices, Agile, Clean Code, Simplicity \
     </p> \
-    <p>Look <a href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the Years.</p> \
+    <p>Look <a href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
     ";
 
 var WantHTML =
@@ -120,7 +120,7 @@ at Technical University Berlin \
 I got a backend and a real smart home to try things out. This work was lots of fun. UI widgets, composition, implementation, and even the 3d-modelling \
 were all part of my work. And hey, you can change skins of the widgets :D \
 <br> <br> \
-You can find my Bachelor's Thesis here (<a target=\"_blank\" href=\"http://langenhagen.cc/res/Implementierung-eines-3D-User-Interfaces.pdf\">link</a>) \
+You can find my Bachelor's Thesis <a target=\"_blank\" href=\"http://langenhagen.cc/res/Implementierung-eines-3D-User-Interfaces.pdf\">here</a> \
 and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Bachelor-Thesis\">github.com/langenhagen</a>. <br> \
 The thesis is in German. \
 </p>";
@@ -136,7 +136,7 @@ The software is capable to do that as well. Well, to a certain degree. Thanks to
 the Database and Information Management Department at TU Berlin (<a target=\"_blank\" href=\"http://www.dima.tu-berlin.de\">dima.tu-berlin.de</a>), \
 I was the first guy to actually use the splendid OPTICS clustering algorithm to solve a computer vision problem - and that with quite okay-ish resuls :) \
 <br> <br> \
-You can find my Master's Thesis here (<a target=\"_blank\" href=\"http://langenhagen.cc/res/Unsupervised-Detection-of-Salient-Regions-in-Image-Databases.pdf\">link</a>) \
+You can find my Master's Thesis <a target=\"_blank\" href=\"http://langenhagen.cc/res/Unsupervised-Detection-of-Salient-Regions-in-Image-Databases.pdf\">here</a> \
 and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Master-Thesis\">github.com/langenhagen</a>. \
 </p>";
 
