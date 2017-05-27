@@ -1,0 +1,8 @@
+Windows ****
+Mac OS X ***
+Gerrit **
+JIRA **
+QtCreator ***
+CMake *
+
+Where I want to see myself in the mid-term future
