@@ -9,7 +9,7 @@ my name is Andreas and I am a little software developer with a tendency towards 
 Please, make yourself at home and have a little look if you like. \
 </p>";
 
-var CanHTML = 
+var CanHTML =
 "<p>What I Can Do </p> <br> \
 <p> \
 This is a self-critical resume of some technologies I love and worked with.<br> \
@@ -86,6 +86,7 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
     <p class=\"with_margin\"> \
         Design Patterns, Software Architecture, Multi-Threading, UI, Best Practices, Agile, Clean Code, Simplicity \
     </p> \
+    <p>Look <a href="https://langenhagen.github.io/Expertises-Gantt/">here</a> for a list of what I did and do over the Years.</p> \
     ";
 
 var WantHTML =
@@ -139,10 +140,10 @@ You can find my Master's Thesis here (<a target=\"_blank\" href=\"http://langenh
 and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Master-Thesis\">github.com/langenhagen</a>. \
 </p>";
 
-var VitaHTML = 
+var VitaHTML =
 " <a id=\"vita_link_left\" target=\"_blank\" href=\"./res/Vita_DE.pdf\">[DE]</a> <a id=\"vita_link_right\" target=\"_blank\" href=\"./res/Vita_EN.pdf\">[EN]</a>";
 
-var AboutHTML = 
+var AboutHTML =
 " <br> \ <p style=\"padding: 34px;\"> \
 <br> \
 <br> \
@@ -212,24 +213,24 @@ var SoapBubblesBubbles;
 /**
 */
 function initAndStartWebGLApp() {
-    
+
     if( !ENGINE.initWebGLOrShowErrorMsg())
         return;
-    
+
     loadAssetsAndCreateScenes();
-    
-    window.addEventListener( 
-        'resize', 
-        function( evt) { 
-            
+
+    window.addEventListener(
+        'resize',
+        function( evt) {
+
             var newAspect = window.innerWidth / window.innerHeight;
-            
+
             LensflareCamera.aspect = newAspect;
             LavalampCamera.aspect = newAspect;
             BuckminsterCamera.aspect = newAspect;
             VogelkindCamera.aspect = newAspect;
             SoapBubblesCamera.aspect = newAspect;
-            
+
             LensflareCamera.updateProjectionMatrix();
             LavalampCamera.updateProjectionMatrix();
             BuckminsterCamera.updateProjectionMatrix();
