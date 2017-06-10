@@ -24,7 +24,7 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
         C++ **** <br> \
         C# **** <br> \
         Python *** <br> \
-        JavaScript **** <br> \
+        JavaScript *** <br> \
         GLSL *** <br> \
         HLSL *** <br> \
         Java *** <br> \
@@ -33,7 +33,6 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
         CSS ** <br> \
         PHP * <br> \
         SQL ** <br> \
-        AutoIt **** <br> \
         VisualBasic *** <br> \
         </p> \
          <br> \
@@ -59,16 +58,17 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
          <br> \
     <p>Technologies</p> <br> \
     <p class=\"with_margin\"> \
+        Android ** <br> \
         Blender * <br> \
         Doxygen *** <br> \
         CMake ** <br> \
         Eclipse *** <br> \
         Gerrit *** <br> \
-        Git *** <br> \
+        Git **** <br> \
+        iOS * <br> \
         Jira *** <br> \
         Linux *** <br> \
         Mac OSX **** <br> \
-        Maven * <br> \
         Node.js *** <br> \
         Photoshop **** <br> \
         Processing **** <br> \
