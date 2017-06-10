@@ -14,6 +14,7 @@ var CanHTML =
 <p> \
 This is a self-critical resume of some technologies I love and worked with.<br> \
 The stars indicate the amount of knowledge, experience and fitness with the technology. \
+<p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
 <br> \
 </p> \
 <br> \
@@ -86,7 +87,6 @@ The stars indicate the amount of knowledge, experience and fitness with the tech
     <p class=\"with_margin\"> \
         Design Patterns, Software Architecture, Multi-Threading, UI, Best Practices, Agile, Clean Code, Simplicity \
     </p> \
-    <p>Look <a target=\"_blank\" href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
     ";
 
 var WantHTML =
