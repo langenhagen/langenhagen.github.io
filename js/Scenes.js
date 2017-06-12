@@ -141,7 +141,7 @@ and the source code on <a target=\"_blank\" href=\"https://github.com/langenhage
 </p>";
 
 var VitaHTML =
-" <a id=\"vita_link_left\" target=\"_blank\" href=\"./res/Vita_DE.pdf\">[DE]</a> <a id=\"vita_link_right\" target=\"_blank\" href=\"./res/Vita_EN.pdf\">[EN]</a>";
+" <a id=\"vita_link_left\" target=\"_blank\" href=\"./res/CV-de.pdf\">[DE]</a> <a id=\"vita_link_right\" target=\"_blank\" href=\"./res/CV-en.pdf\">[EN]</a>";
 
 var AboutHTML =
 " <br> \ <p style=\"padding: 34px;\"> \
