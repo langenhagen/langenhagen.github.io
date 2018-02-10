@@ -236,12 +236,12 @@ function initAndStartWebGLApp() {
             BuckminsterCamera.updateProjectionMatrix();
             VogelkindCamera.updateProjectionMatrix();
             SoapBubblesCamera.updateProjectionMatrix();
-            
+
             ENGINE.renderer.setSize( window.innerWidth, window.innerHeight );
-        }, 
+        },
         false
     );
-    
+
     ContentDiv = $("#content");
     ContentDiv.html( MeHTML);
     dragablizer = new ObjectDragablizer(document.getElementById("content_container"), window);
@@ -254,7 +254,7 @@ function initAndStartWebGLApp() {
 /**
 */
 function loadAssetsAndCreateScenes() {
-    
+
     function loadLensflaresSceneAssets() {
         var get1 = $.get( "./glsl/simple.vert",     function( vert ) { LensflareVert = vert; });
         var get2 = $.get( "./glsl/swimmingColors.frag", function( frag ) { LensflareFrag = frag; });
@@ -263,12 +263,12 @@ function loadAssetsAndCreateScenes() {
             createLensflaresScene();
             startInitialScene();
             var button = $("#me");
-            button.click(function(){ 
+            button.click(function(){
                 ENGINE.currentUpdateFunction = scenes.Lensflares;
                 ContentDiv.html( MeHTML);
             });
             button.removeClass("blocked_link").addClass("active_link");
-            
+
             button = $("#bsc");
             button.click(function(){
                 ENGINE.currentUpdateFunction = scenes.Lensflares;
@@ -281,29 +281,29 @@ function loadAssetsAndCreateScenes() {
                 ENGINE.currentUpdateFunction = scenes.Lensflares;
                 ContentDiv.html( MscHTML);
             });
-            button.removeClass("blocked_link").addClass("active_link");   
+            button.removeClass("blocked_link").addClass("active_link");
         });
     }
 
-    function loadLavalampSceneAssets() {    
+    function loadLavalampSceneAssets() {
         var get1 = $.get( "./glsl/perlinWobbly.vert", function( vert ) { LavalampVert = vert; });
-        var get2 = $.get( "./glsl/perlinWobbly.frag", function( frag ) { LavalampFrag = frag; });    
+        var get2 = $.get( "./glsl/perlinWobbly.frag", function( frag ) { LavalampFrag = frag; });
 
         $.when( get1, get2).done( function() {
             createLavaLampScene();
-            
+
             var button = $("#can");
-            button.click(function(){ 
+            button.click(function(){
                 ENGINE.currentUpdateFunction = scenes.Lavalamp;
                 ContentDiv.html( CanHTML);
-                
+
             });
             button.removeClass("blocked_link").addClass("active_link");
         });
     }
-    
+
     function loadBuckminsterSceneAssets() {
-        
+
         var cubeTextures = [
           './res/Vindelalven/posx.jpg',
           './res/Vindelalven/negx.jpg',
@@ -314,20 +314,20 @@ function loadAssetsAndCreateScenes() {
         ];
 
         BuckminsterCubemap = THREE.ImageUtils.loadTextureCube(cubeTextures);
-         
+
         createBuckminsterScene();
-        
+
         var button = $("#want");
         button.click(function(){
             ENGINE.currentUpdateFunction = scenes.Buckminster;
             ContentDiv.html( WantHTML);
         });
         button.removeClass("blocked_link").addClass("active_link");
-        
+
     }
-    
+
     function loadVogelkindSceneAssets() {
-                
+
         var loader = new THREE.OBJLoader();
         loader.load(
             // resource URL
@@ -335,9 +335,9 @@ function loadAssetsAndCreateScenes() {
             // Function when resource is loaded
             function ( object ) {
                 VogelkindVogel = object;
-                
+
                 createVogelkindScene();
-                
+
                 var button = $("#vita");
                 button.click(function(){
                     ENGINE.currentUpdateFunction = scenes.Vogelkind;
@@ -347,11 +347,11 @@ function loadAssetsAndCreateScenes() {
             }
         );
     }
-    
+
     function loadSoapBubblesSceneAssets() {
         // TODO BUTTON FREISCHALTEN
-        
-        
+
+
         var cubeTextures = [
           './res/Vindelalven/posx.jpg',
           './res/Vindelalven/negx.jpg',
@@ -362,9 +362,9 @@ function loadAssetsAndCreateScenes() {
         ];
 
         SoapBubblesCubemap = THREE.ImageUtils.loadTextureCube(cubeTextures);
-        
+
         createSoapBubblesScene();
-        
+
         var button = $("#about");
         button.click(function(){
             ENGINE.currentUpdateFunction = scenes.SoapBubbles;
@@ -372,7 +372,7 @@ function loadAssetsAndCreateScenes() {
         });
         button.removeClass("blocked_link").addClass("active_link");
     }
-        
+
     loadLensflaresSceneAssets();
     loadLavalampSceneAssets();
     loadBuckminsterSceneAssets();
@@ -393,17 +393,17 @@ function startInitialScene() {
 */
 function createLensflaresScene() {
     var aspect = ENGINE.canvas.width / ENGINE.canvas.height;
-    
-    LensflareScene = new THREE.Scene(); 
+
+    LensflareScene = new THREE.Scene();
     LensflareCamera = new THREE.OrthographicCamera( -1, 1, 1, -1, 1, 1000 );
-    //LensflareCamera = new THREE.PerspectiveCamera(45, aspect, 1, 10000); 
-    LensflareCamera.position.set(0, 0, 100); 
-    LensflareCamera.lookAt( LensflareScene.position); 
+    //LensflareCamera = new THREE.PerspectiveCamera(45, aspect, 1, 10000);
+    LensflareCamera.position.set(0, 0, 100);
+    LensflareCamera.lookAt( LensflareScene.position);
     LensflareScene.add(LensflareCamera);
-    
+
     var width = 2;
     var geometry = new THREE.PlaneGeometry( width, width, 1 );
-    
+
     var uniforms = {
         time:               { type: 'f', value: 0.0 },
         aspect:             { type: 'f', value: aspect },
@@ -412,7 +412,7 @@ function createLensflaresScene() {
     LensflareMaterial = new THREE.ShaderMaterial({
         uniforms:     	uniforms,
         vertexShader:   LensflareVert,
-        fragmentShader: LensflareFrag 
+        fragmentShader: LensflareFrag
     });
     var plane = new THREE.Mesh( geometry, LensflareMaterial );
     LensflareScene.add( plane );
@@ -421,11 +421,11 @@ function createLensflaresScene() {
 /**
 */
 function updateLensflaresScene() {
-        
+
     var multiplier = Math.min( 0.0005, ENGINE.elapsedTime * 0.0000001);
-    
+
     LensflareMaterial.uniforms["time"].value = multiplier * ENGINE.elapsedTime;
-    
+
     ENGINE.renderer.render( LensflareScene, LensflareCamera );
 }
 
@@ -434,15 +434,15 @@ function updateLensflaresScene() {
 /**
 */
 function createLavaLampScene() {
-    
-    LavalampScene = new THREE.Scene(); 
 
-    LavalampCamera = new THREE.PerspectiveCamera(45, ENGINE.canvas.width / ENGINE.canvas.height, 1, 10000); 
-    LavalampCamera.position.set(0, 0, 500); 
-    LavalampCamera.lookAt( LavalampScene.position); 
+    LavalampScene = new THREE.Scene();
+
+    LavalampCamera = new THREE.PerspectiveCamera(45, ENGINE.canvas.width / ENGINE.canvas.height, 1, 10000);
+    LavalampCamera.position.set(0, 0, 500);
+    LavalampCamera.lookAt( LavalampScene.position);
     LavalampScene.add(LavalampCamera);
-    
-    
+
+
     var uniforms = {
         time:               { type: 'f', value: 0.0 },
         tiling:             { type: 'f', value: 0.0 },
@@ -453,21 +453,21 @@ function createLavaLampScene() {
 	var shaderMaterial = new THREE.ShaderMaterial({
 		uniforms:     	uniforms,
 		vertexShader:   LavalampVert,
-		fragmentShader: LavalampFrag 
+		fragmentShader: LavalampFrag
 	});
 
-    
+
 	var radius = 50, segments = 128, rings = 128;
 	LavalampSphere = new THREE.Mesh( new THREE.SphereGeometry(radius, segments, rings),
                                      shaderMaterial);
-		
+
 	LavalampScene.add(LavalampSphere);
-    
+
     LavalampComposer = new THREE.EffectComposer(ENGINE.renderer);
-    
+
     var renderPass = new THREE.RenderPass(LavalampScene, LavalampCamera);
     LavalampComposer.addPass(renderPass);
-    
+
     AdditiveLinearBlurHorizontalShader.uniforms["offsetPerPixel"].value = 1.0 / ENGINE.canvas.width;
     var additiveHorizontalBlurPass = new THREE.ShaderPass( AdditiveLinearBlurHorizontalShader);
     additiveHorizontalBlurPass.renderToScreen = true;
@@ -480,18 +480,18 @@ function createLavaLampScene() {
 function updateLavaLampScene(){
     var brightness = Math.pow( 0.001 * ENGINE.elapsedTime, 8);
     var uniforms = LavalampSphere.material.uniforms;
-    
+
     // Stage agnostics
     uniforms["time"].value = 0.0001 * ENGINE.elapsedTime;
-    
+
     if( brightness < 1) {
         // Intro Stage
         uniforms["brightness"].value = brightness;
-    } 
+    }
     else {
         // Running Stage
         uniforms["brightness"].value = 1;
-        
+
         var currentTilingValue = uniforms["tiling"].value;
         var targetTilingValue = Math.min( ENGINE.canvas.height, ENGINE.mouseY) * 0.0005;
         var tilingChange = ENGINE.msSinceLastFrame * 0.00005;
@@ -500,7 +500,7 @@ function updateLavaLampScene(){
 
         uniforms["tiling"].value += tilingChange;
         LavalampSphere.rotateY( 0.0002 * ENGINE.msSinceLastFrame);
-        
+
         LavalampComposer.render(ENGINE.msSinceLastFrame); //parameter must be set with render
     }
 }
@@ -510,19 +510,19 @@ function updateLavaLampScene(){
 /**
 */
 function createBuckminsterScene() {
-    BuckminsterScene = new THREE.Scene(); 
+    BuckminsterScene = new THREE.Scene();
     BuckminsterScene.fog = new THREE.Fog( 0x000000, 800, 1250 );
-    
-    BuckminsterCamera = new THREE.PerspectiveCamera(60, ENGINE.canvas.width / ENGINE.canvas.height, 10, 10000); 
-    BuckminsterCamera.position.set(0, 300, -1000); 
-    BuckminsterCamera.lookAt( BuckminsterScene.position); 
+
+    BuckminsterCamera = new THREE.PerspectiveCamera(60, ENGINE.canvas.width / ENGINE.canvas.height, 10, 10000);
+    BuckminsterCamera.position.set(0, 300, -1000);
+    BuckminsterCamera.lookAt( BuckminsterScene.position);
     BuckminsterScene.add(BuckminsterCamera);
-    
+
     var light = new THREE.PointLight( 0xffffff );
     light.position.set( 1000, 800, -500 );
     BuckminsterScene.add( light );
-    
-    
+
+
     createFullerene();
 }
 
@@ -530,29 +530,29 @@ function createBuckminsterScene() {
 /**
 */
 function updateBuckminsterScene() {
-        
+
     // rotate around global x axis
     var q = new THREE.Quaternion();
     q.setFromAxisAngle( new THREE.Vector3(1,0,0), ENGINE.mouseOffsetY * 0.0005);
     BuckminsterFullerene.quaternion.multiplyQuaternions( q, BuckminsterFullerene.quaternion );
 
     BuckminsterFullerene.rotateY( 0.0002 * ENGINE.msSinceLastFrame - ENGINE.mouseOffsetX * 0.0006);
-        
+
     var spheres = BuckminsterScene.getObjectByName( "spheres").children;
     var timingFactor = ((ENGINE.elapsedTime * 0.004) % 10) * 0.1; // [0,1]
     var mousePosY = ENGINE.mouseY / ENGINE.canvas.height;     // [0,1]
-    
+
     for( var i=0; i<spheres.length; ++i) {
         var sphere = spheres[i];
-        
+
         // mouse-dependent scaling
         var normalizedSpherePos = (sphere.position.y) / (2 * sphereMaxY) + 0.5; // [0,1] 1: top, 0: bottom
-        var inverseDiff = 1 - Math.abs( mousePosY - normalizedSpherePos); // [0,1] 
+        var inverseDiff = 1 - Math.abs( mousePosY - normalizedSpherePos); // [0,1]
 
-        var timeDependentScaling = Math.sin( -Math.abs( timingFactor) * 2 * Math.PI - normalizedSpherePos * (3 + 0.1*i)) * 0.5 + 0.5; 
-        
+        var timeDependentScaling = Math.sin( -Math.abs( timingFactor) * 2 * Math.PI - normalizedSpherePos * (3 + 0.1*i)) * 0.5 + 0.5;
+
         var scale = Math.max(0, (Math.sin( inverseDiff * Math.PI - Math.PI/2) + 1) * 0.5 + 1.6 * timeDependentScaling + 0.2);
-        
+
         sphere.scale.set( scale, scale, scale);
     }
 
@@ -565,30 +565,30 @@ function updateBuckminsterScene() {
 /**
 */
 function createVogelkindScene() {
-    
-    VogelkindScene = new THREE.Scene(); 
 
-    VogelkindCamera = new THREE.PerspectiveCamera(45, ENGINE.canvas.width / ENGINE.canvas.height, 1, 10000); 
-    VogelkindCamera.position.set(0, 0, 1000); 
-    VogelkindCamera.lookAt( VogelkindScene.position); 
+    VogelkindScene = new THREE.Scene();
+
+    VogelkindCamera = new THREE.PerspectiveCamera(45, ENGINE.canvas.width / ENGINE.canvas.height, 1, 10000);
+    VogelkindCamera.position.set(0, 0, 1000);
+    VogelkindCamera.lookAt( VogelkindScene.position);
     VogelkindScene.add(VogelkindCamera);
-    
+
     var light = new THREE.PointLight( 0xffffff );
     light.position.set( 1000, 800, -500 );
     VogelkindScene.add( light );
-    
-    var material = new THREE.MeshPhongMaterial( 
-         { color: 0xFFFFFF, emissive: 0x000000, specular: 0xffffff, shininess: 10, 
+
+    var material = new THREE.MeshPhongMaterial(
+         { color: 0xFFFFFF, emissive: 0x000000, specular: 0xffffff, shininess: 10,
            envMap: BuckminsterCubemap, reflectivity: 0.9, refractionRatio: 0.999,
            shading: THREE.SmoothShading, blending: THREE.MultiplyBlending, wireframe: false } );
-    
+
     VogelkindVogel.scale.set( 50, 50, 50);
     VogelkindVogel.position.set( 0, 75, 0);
     for( var i=0; i<VogelkindVogel.children.length; ++i) {
         var mesh = VogelkindVogel.children[i];
         mesh.material = material;
     }
-    VogelkindScene.add( VogelkindVogel); 
+    VogelkindScene.add( VogelkindVogel);
 }
 
 
@@ -607,15 +607,15 @@ function updateVogelkindScene() {
 /**
 */
 function createSoapBubblesScene() {
- 
-    SoapBubblesScene = new THREE.Scene(); 
 
-    SoapBubblesCamera = new THREE.PerspectiveCamera(50, ENGINE.canvas.width / ENGINE.canvas.height, 1, 1000000); 
-    SoapBubblesCamera.position.set(0, 0, 500); 
-    SoapBubblesCamera.lookAt( SoapBubblesScene.position); 
+    SoapBubblesScene = new THREE.Scene();
+
+    SoapBubblesCamera = new THREE.PerspectiveCamera(50, ENGINE.canvas.width / ENGINE.canvas.height, 1, 1000000);
+    SoapBubblesCamera.position.set(0, 0, 500);
+    SoapBubblesCamera.lookAt( SoapBubblesScene.position);
     SoapBubblesScene.add(SoapBubblesCamera);
-    
-    
+
+
     var cubemapShader = THREE.ShaderLib["cube"];
     var cubeMapShaderUniforms = THREE.UniformsUtils.clone( cubemapShader.uniforms );
     cubeMapShaderUniforms['tCube'].value = SoapBubblesCubemap;
@@ -626,49 +626,49 @@ function createSoapBubblesScene() {
         depthWrite:     false,
         side:           THREE.DoubleSide
     });
-        
+
     var skybox = new THREE.Mesh( new THREE.BoxGeometry( 100000, 100000, 100000, 1, 1, 1), cubemapMaterial );
     SoapBubblesScene.add( skybox );
     skybox.rotateX(100 );
 
     SoapBubblesBubbles = new THREE.Object3D();
-    
+
     var radius = 120 , segments = 20, rings = 20;
-        
+
     THREE.FresnelShader.uniforms["tCube"].value = SoapBubblesCubemap;
     THREE.FresnelShader.uniforms["mFresnelBias"].value = 0.1;
-    
-    
+
+
     var fresnelShaderMaterial = new THREE.ShaderMaterial({
 		uniforms:     	THREE.FresnelShader.uniforms,
 		vertexShader:   THREE.FresnelShader.vertexShader,
 		fragmentShader: THREE.FresnelShader.fragmentShader,
 	});
-    
-    
+
+
     for ( var i=0; i < 250; ++i) {
-        var sphere = new THREE.Mesh( new THREE.SphereGeometry( 
-            radius + (Math.random()-0.5) * 50, 
-            segments, 
-            rings), 
+        var sphere = new THREE.Mesh( new THREE.SphereGeometry(
+            radius + (Math.random()-0.5) * 50,
+            segments,
+            rings),
             fresnelShaderMaterial
         );
         SoapBubblesBubbles.add( sphere);
         sphere.direction = new THREE.Vector3();
-        
-        sphere.direction.set( 
+
+        sphere.direction.set(
             (Math.random()-0.5)*3,
             (Math.random()-0.5)*10,
-            (Math.random()-0.5)*0.2 
+            (Math.random()-0.5)*0.2
         );
-        
-        sphere.position.set( 
+
+        sphere.position.set(
             (Math.random()-0.5)*6000,
             (Math.random()-0.5)*6000,
             Math.random()*4500 - 500
-        ); 
+        );
     }
-       
+
     SoapBubblesScene.add( SoapBubblesBubbles);
 }
 
@@ -684,35 +684,35 @@ function updateSoapBubbleScene() {
     var targetCamPosY = (mousePosY - 0.5) * 1000;
     var currentCamPosX = SoapBubblesCamera.position.x;
     var currentCamPosY = SoapBubblesCamera.position.y;
-    
+
     var standardSpeedX = ENGINE.msSinceLastFrame * Math.abs( targetCamPosX - currentCamPosX ) * 0.01;
     var standardSpeedY = ENGINE.msSinceLastFrame * Math.abs( targetCamPosY - currentCamPosY ) * 0.01;
-    
+
     var positionChangeX = Math.max( 0, Math.min( 100, standardSpeedX));
     var positionChangeY = Math.max( 0, Math.min( 100, standardSpeedY));
-    
+
     SoapBubblesCamera.position.x += targetCamPosX < currentCamPosX ? -positionChangeX : positionChangeX;
     SoapBubblesCamera.position.y += targetCamPosY < currentCamPosY ? -positionChangeY : positionChangeY;
-    
+
     SoapBubblesCamera.lookAt( SoapBubblesScene.position);
-    
-    
+
+
     var bubbles = SoapBubblesBubbles.children;
-    
+
     for( var i=0; i<bubbles.length; ++i) {
         var sphere = bubbles[i];
         var pos = sphere.position;
-    
+
         if( pos.x < -3100 || pos.x > 3100 ||
             pos.y < -3100 || pos.y > 3100 ||
             pos.z > 1000 || pos.z < -4000) {
             // passed outer bounds - reset
             setSoapBubbleDirectionAndPosition( sphere);
-        
+
         /*
         } else if ( Math.random() < 0.001 ) {
             // randomly burst a bubble
-            setSoapBubbleDirectionAndPosition( sphere); 
+            setSoapBubbleDirectionAndPosition( sphere);
         /**/
         } else {
             // normal movement
@@ -720,7 +720,7 @@ function updateSoapBubbleScene() {
             sphere.position.set( pos.x+dir.x, pos.y+dir.y, pos.z+dir.z);
         }
     }
-    
+
     ENGINE.renderer.render( SoapBubblesScene, SoapBubblesCamera );
 }
 
@@ -735,14 +735,14 @@ function createPipe(v1, v2, thickness, radiusSegments, heightSegments, material 
     var height = v1.distanceTo( v2);
     var pos = new THREE.Vector3( v1.x - (v1.x-v2.x)*0.5, v1.y - (v1.y-v2.y)*0.5, v1.z - (v1.z-v2.z)*0.5);
     var arrow = new THREE.ArrowHelper( direction, v1 );
-    
+
     var geometry = new THREE.CylinderGeometry( thickness, thickness, height, radiusSegments, heightSegments, true /*open ended*/ );
-    
+
     var mesh = new THREE.Mesh( geometry, material);
-                               
+
     mesh.rotation.copy( arrow.rotation);
     mesh.position.copy( pos);
-    
+
     return mesh;
 }
 
@@ -753,32 +753,32 @@ function createFullerene() {
     // c60 fullerene - what else ;)
     // pipe vars
     var thickness = .05, radiusSegments = 5, heightSegments = 1;
-    
-    var pipeMaterial = new THREE.MeshPhongMaterial( { 
-        color: 0xdddddd, emissive: 0x000000, specular: 0xCCCCCC, shininess: 60, 
-        envMap: BuckminsterCubemap, reflectivity: 0.9, 
-        shading: THREE.SmoothShading 
+
+    var pipeMaterial = new THREE.MeshPhongMaterial( {
+        color: 0xdddddd, emissive: 0x000000, specular: 0xCCCCCC, shininess: 60,
+        envMap: BuckminsterCubemap, reflectivity: 0.9,
+        shading: THREE.SmoothShading
     });
-                                                  
+
     // sphere vars
     var radius = .66 , segments = 16, rings = 16;
-    var sphereColorMaterial = new THREE.MeshPhongMaterial({ 
-        color: 0x999999, emissive: 0xff0085, specular: 0xffffff, shininess: 10, 
+    var sphereColorMaterial = new THREE.MeshPhongMaterial({
+        color: 0x999999, emissive: 0xff0085, specular: 0xffffff, shininess: 10,
         envMap: BuckminsterCubemap, reflectivity: 0.3,
-        shading: THREE.SmoothShading, blending: THREE.MultiplyBlending, transparent: false, wireframe: false 
+        shading: THREE.SmoothShading, blending: THREE.MultiplyBlending, transparent: false, wireframe: false
     });
-    
-    
+
+
     BuckminsterFullerene = new THREE.Object3D();
     var grid = new THREE.Object3D();
     var spheres = new THREE.Object3D();
     grid.name = "grid";
     spheres.name = "spheres";
-    
-    
+
+
     var phi = 1.61803398875;    // = (1 + sqrt(5)) / 2;
     sphereMaxY = -(1 + 2 * phi);
-    
+
     var nodes = [];
     nodes[0]  = new THREE.Vector3( +3 * phi, 0, +1 );            nodes[20] = new THREE.Vector3(+1, +3 * phi, 0);
     nodes[1]  = new THREE.Vector3(+3 * phi, 0, -1);              nodes[21] = new THREE.Vector3(+1, -3 * phi, 0);
@@ -800,7 +800,7 @@ function createFullerene() {
     nodes[17] = new THREE.Vector3(-(2 + phi), +2 * phi, -1);     nodes[37] = new THREE.Vector3(-1, +(2 + phi), -2 * phi);
     nodes[18] = new THREE.Vector3(-(2 + phi), -2 * phi, +1);     nodes[38] = new THREE.Vector3(-1, -(2 + phi), +2 * phi);
     nodes[19] = new THREE.Vector3(-(2 + phi), -2 * phi, -1);     nodes[39] = new THREE.Vector3(-1, -(2 + phi), -2 * phi);
-    
+
     nodes[40] = new THREE.Vector3(0, +1, +3 * phi);
     nodes[41] = new THREE.Vector3(0, +1, -3 * phi);
     nodes[42] = new THREE.Vector3(0, -1, +3 * phi);
@@ -821,8 +821,8 @@ function createFullerene() {
     nodes[57] = new THREE.Vector3(-2 * phi, +1, -(2 + phi));
     nodes[58] = new THREE.Vector3(-2 * phi, -1, +(2 + phi));
     nodes[59] = new THREE.Vector3(-2 * phi, -1, -(2 + phi));
-    
-    
+
+
     var connections = [
         [ 0,  1],       [ 8, 56],       [34, 46],       [25, 33],       [20, 24],
         [16, 17],       [11, 59],       [32, 44],       [31, 39],       [20, 25],
@@ -843,23 +843,23 @@ function createFullerene() {
         [40, 42],       [35, 47],       [44, 52],       [ 3,  9],       [42, 46],
         [41, 43],       [37, 49],       [28, 36],       [ 3, 11],       [42, 50]
     ];
-    
-    
+
+
     for ( var i=0; i<connections.length; ++i) {
         var c = connections[i];
         var pipe = createPipe( nodes[c[0]], nodes[c[1]], thickness, radiusSegments, heightSegments, pipeMaterial );
         grid.add(pipe);
     }
-    
+
     for ( var i=0; i< nodes.length; ++i) {
         var sphere = new THREE.Mesh( new THREE.SphereGeometry( radius, segments, rings), sphereColorMaterial);
-        sphere.position.copy( nodes[i]); 
+        sphere.position.copy( nodes[i]);
         spheres.add( sphere);
     }
-    
+
     BuckminsterFullerene.add( grid);
     BuckminsterFullerene.add( spheres);
-    
+
     var scale = 40;
     BuckminsterScene.add( BuckminsterFullerene);
 
@@ -869,23 +869,23 @@ function createFullerene() {
 /**
 */
 function setSoapBubbleDirectionAndPosition( bubble) {
-    
+
     bubble.direction.set( (Math.random()-0.5)*3, (Math.random()-0.5)*10, (Math.random()-0.5)*0.2 );
-        
+
     var strongestDirection = Math.abs(bubble.direction.x) > Math.abs(bubble.direction.y) ? 'x' : 'y';
-    
+
     var startPosX, startPosY, startPosZ;
-    
+
     if( strongestDirection === 'x') {
         startPosX = bubble.direction.x > 0 ? -3000 : 3000;
         startPosY = (Math.random()-0.5)*3000;
-            
+
     } else /* === 'y'*/ {
         startPosX = (Math.random()-0.5)*3000;
         startPosY = bubble.direction.x > 0 ? -3000 : 3000;
     }
-    
+
     startPosZ = Math.random()*4500 - 4000;
-    
-    bubble.position.set( startPosX, startPosY, startPosZ); 
+
+    bubble.position.set( startPosX, startPosY, startPosZ);
 }
