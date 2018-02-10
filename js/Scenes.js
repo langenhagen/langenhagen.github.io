@@ -151,7 +151,7 @@ var AboutHTML =
 mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
 <br> \
 <a target=\"_blank\" href=\"https://github.com/langenhagen\">github.com/langenhagen</a> <br> \
-<br> \
+<a target=\"_blank\" href=\"https://repl.it/@barn07\">repl.it/@barn07</a> <br> \
 <br> \
 <br> \
 <br> \
