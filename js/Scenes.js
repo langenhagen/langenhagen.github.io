@@ -5,14 +5,14 @@ var MeHTML =
 "<p>Hi there,</p> \
 <br> \
 <p> \
-my name is Andreas and I am a little software developer with a tendency towards C++, CG and AI.<br> \
-Please, make yourself at home and have a little look if you like. \
+my name is Andreas and I am a software developer with a tendency towards C++, CG and AI.<br> \
+Please make yourself at home and have a little look if you like. \
 </p>";
 
 var CanHTML =
 "<p>What I Can Do </p> <br> \
 <p> \
-This is a self-critical resume of some technologies I love and worked with.<br> \
+This is a resume of some technologies I love and worked with.<br> \
 The stars indicate the amount of knowledge, experience and fitness with the technology. \
 <p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
 <br> \
@@ -768,13 +768,11 @@ function createFullerene() {
         shading: THREE.SmoothShading, blending: THREE.MultiplyBlending, transparent: false, wireframe: false
     });
 
-
     BuckminsterFullerene = new THREE.Object3D();
     var grid = new THREE.Object3D();
     var spheres = new THREE.Object3D();
     grid.name = "grid";
     spheres.name = "spheres";
-
 
     var phi = 1.61803398875;    // = (1 + sqrt(5)) / 2;
     sphereMaxY = -(1 + 2 * phi);
@@ -822,7 +820,6 @@ function createFullerene() {
     nodes[58] = new THREE.Vector3(-2 * phi, -1, +(2 + phi));
     nodes[59] = new THREE.Vector3(-2 * phi, -1, -(2 + phi));
 
-
     var connections = [
         [ 0,  1],       [ 8, 56],       [34, 46],       [25, 33],       [20, 24],
         [16, 17],       [11, 59],       [32, 44],       [31, 39],       [20, 25],
@@ -843,7 +840,6 @@ function createFullerene() {
         [40, 42],       [35, 47],       [44, 52],       [ 3,  9],       [42, 46],
         [41, 43],       [37, 49],       [28, 36],       [ 3, 11],       [42, 50]
     ];
-
 
     for ( var i=0; i<connections.length; ++i) {
         var c = connections[i];
