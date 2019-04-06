@@ -1,15 +1,11 @@
 # My Web Page
-
-author: langenhagen (andreas@langenhagen.cc)
+author: andreasl (andreas@langenhagen.cc)
 version: 170516
-
-
 
 This project contains My static Web Page and its resources.
 
 
 ## TODO:
-
 Maybe add something about the following:
     Windows ****
     Mac OS X ***
@@ -19,3 +15,12 @@ Maybe add something about the following:
     CMake *
 
     Where I want to see myself in the mid-term future
+
+Mention what you like to do:
+
+    automate, improve, support,
+    plan and structure
+    learn
+
+Nice inspiration:
+http://www.sebastien-eustace.fr/
