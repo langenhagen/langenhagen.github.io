@@ -1,26 +1,28 @@
 # My Web Page
 - author: andreasl (andreas@langenhagen.cc)
-- version: 170516
 
 This project contains My static Web Page and its resources.
 
 
 ## TODO:
-Maybe add something about the following:
-    Windows ****
-    Mac OS X ***
-    Gerrit **
-    JIRA **
-    QtCreator ***
-    CMake *
+- Re-work the whole page
+- think of adding a showreel page
+- Add something about the following:
+  - Linux ****
+  - Mac OS X ***
+  - Windows ****
+  - Gerrit *****
+  - JIRA ***
+  - QtCreator ***
+  - CMake *****
 
-    Where I want to see myself in the mid-term future
+- What do I want to do in 5 years?
+- What do I want to do in 10 years?
 
-Mention what you like to do:
+- Mention what you like to do:
+  - automate, improve, support,
+  - plan and structure
+  - learn
 
-    automate, improve, support,
-    plan and structure
-    learn
-
-Nice inspiration:
-http://www.sebastien-eustace.fr/
+- nice inspiration: http://www.sebastien-eustace.fr/
+- nice CSS: https://codepen.io/HelKyle/pen/ePyENP
