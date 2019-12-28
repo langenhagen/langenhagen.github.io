@@ -14,7 +14,6 @@ var CanHTML =
 <p> \
 Below is a listing of some technologies I love and work with.<br> \
 <p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
-<br> \
 </p> \
 <br> \
     <p>Programming Languages</p> <br> \
@@ -49,7 +48,7 @@ Below is a listing of some technologies I love and work with.<br> \
         Git<br> \
         Jira<br> \
         Linux<br> \
-        Mac OSX<br> \
+        Mac OS X<br> \
         Photoshop<br> \
         Processing<br> \
         Qt Creator<br> \
@@ -72,22 +71,22 @@ var WantHTML =
 "<p>What I Want To Do</p> \
 <br> \
 <p class=\"with_margin\"> \
-write C++<br> \
-write Python<br> \
-write C#<br> \
-Automate & Streamline Processes<br> \
-Improve Code Quality<br> \
-Program Shaders<br> \
-Program Neural Networks<br> \
-Work in Machine Learning<br> \
-Work in Computer Graphics<br> \
-Architect reusable & scalable Software<br> \
-employ Parallelism<br> \
-Create Atmosphere<br> \
-Work on Sustainability Projects<br> \
-Work on Cutting Edge Videogames<br> \
-High Performance Stuff<br> \
-Combine Mental and Physical Work<br> \
+- write C++<br> \
+- write Python<br> \
+- write C#<br> \
+- automate & Streamline Processes<br> \
+- improve Code Quality<br> \
+- program Shaders<br> \
+- program Neural Networks<br> \
+- work in Machine Learning<br> \
+- work in Computer Graphics<br> \
+- architect reusable & scalable Software<br> \
+- employ Parallelism<br> \
+- create Atmosphere<br> \
+- work on Sustainability Projects<br> \
+- work on Cutting Edge Videogames<br> \
+- high Performance Stuff<br> \
+- combine Mental and Physical Work<br> \
 </p>";
 
 var BscHTML =
@@ -138,7 +137,7 @@ mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
 <br> <a class=\"fineprint\">Stuff to mention:</a> <br> \
 <a class=\"fineprint\" target=\"_blank\" href=https://www.shadertoy.com/view/lslSRf>*c60 fullerene idea snitched from mplanck</a> <br> \
 <a class=\"fineprint\" target=\"_blank\" href=http://www.humus.name>*original cubemap by Humus</a> <br> \
-<br> <a class=\"fineprint\">v1.0.0</a> <br> \
+<br> <a class=\"fineprint\">v1.0.1</a> <br> \
 </p>";
 
 var ContentDiv;
