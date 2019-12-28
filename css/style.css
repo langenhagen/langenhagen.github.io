@@ -1,7 +1,7 @@
 /* My Personal Page css file.
  *
  * author: langenhagen
- * version: 160110
+ * version: 191228
  */
 
 body {
@@ -41,7 +41,6 @@ div {
     z-index:1000;
 }
 
-
 .link_container {
     float:left;
     position:absolute;
@@ -70,7 +69,6 @@ div {
     font-size: 18px;
 }
 
-
 @keyframes scaleAnim {
   0% {
     transform: scale(0.1);
@@ -84,7 +82,6 @@ div {
     transform: scale(2);
   }
 }
-
 
 #status {
     position:absolute;
@@ -103,7 +100,6 @@ div {
 #status.animationOff {
     animation-name: none;
 }
-
 
 #content_container {
     float:left;
@@ -141,11 +137,11 @@ div {
     body {
         font-size:12px;
     }
-    
+
     .fineprint {
         font-size: 10px;
     }
-    
+
     #vita_link_left {
         font-size:14px;
     }
@@ -153,11 +149,11 @@ div {
     #vita_link_right {
         font-size:14px;
     }
-    
+
     .link_container {
         width:30%;
     }
-    
+
     #content_container {
         left:30%;
         width:70%;

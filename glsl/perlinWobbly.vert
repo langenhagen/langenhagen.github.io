@@ -113,9 +113,10 @@ float cnoise(vec3 P)
   vec3 fade_xyz = fade(Pf0);
   vec4 n_z = mix(vec4(n000, n100, n010, n110), vec4(n001, n101, n011, n111), fade_xyz.z);
   vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);
-  float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); 
+  float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x);
   return 2.2 * n_xyz;
 }
+
 
 // Classic Perlin noise, periodic variant
 float pnoise(vec3 P, vec3 rep)
@@ -183,11 +184,9 @@ float pnoise(vec3 P, vec3 rep)
   vec3 fade_xyz = fade(Pf0);
   vec4 n_z = mix(vec4(n000, n100, n010, n110), vec4(n001, n101, n011, n111), fade_xyz.z);
   vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);
-  float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); 
+  float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x);
   return 2.2 * n_xyz;
 }
-
- 
 
 
 float turbulence( vec3 p ) {
@@ -202,14 +201,14 @@ float turbulence( vec3 p ) {
 
 
 float surface3 ( vec3 coord ) {
-  
+
 	const float frequency = 4.0;
-	float n = 0.0;	
-		
+	float n = 0.0;
+
 	n += 1.0	* abs( cnoise( coord * frequency ) );
 //	n += 0.5	* abs( cnoise( coord * frequency * 2.0 ) );
 //	n += 0.25	* abs( cnoise( coord * frequency * 4.0 ) );
-	
+
 	return n;
 }
 
@@ -219,7 +218,7 @@ void main() {
   vBrightness = brightness;
 
   noiseVal = surface3(  tiling * normal + time );
-    
+
   vec3 newPosition = position + normal * noiseVal * 100.0 + amount;
   gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
 
