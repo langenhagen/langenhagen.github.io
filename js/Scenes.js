@@ -12,80 +12,59 @@ Please make yourself at home and have a little look if you like. \
 var CanHTML =
 "<p>What I Can Do </p> <br> \
 <p> \
-This is a resume of some technologies I love and worked with.<br> \
-The stars indicate the amount of knowledge, experience and fitness with the technology. \
+Below is a listing of some technologies I love and work with.<br> \
 <p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
 <br> \
 </p> \
 <br> \
     <p>Programming Languages</p> <br> \
      <p class=\"with_margin\"> \
-        Bash *** <br> \
-        C++ **** <br> \
-        C# **** <br> \
-        Python *** <br> \
-        JavaScript *** <br> \
-        GLSL *** <br> \
-        HLSL *** <br> \
-        Java *** <br> \
-        CUDA *** <br> \
-        HTML ** <br> \
-        CSS ** <br> \
-        PHP * <br> \
-        SQL ** <br> \
-        VisualBasic *** <br> \
+        Bash<br> \
+        C++<br> \
+        C#<br> \
+        Python<br> \
+        GLSL<br> \
+        HLSL<br> \
         </p> \
          <br> \
     <p>APIs</p> <br> \
     <p class=\"with_margin\"> \
-        .NET *** <br> \
-        Awesomium *** <br> \
-        Boost **** <br> \
-        cub * <br> \
-        db4o *** <br> \
-        GIT *** <br> \
-        GLUT *** <br> \
-        Google Test *** <br> \
-        Irrlicht **** <br> \
-        Microsoft CCR **** <br> \
-        MT4j **** <br> \
-        OGRE **** <br> \
-        OpenGL *** <br> \
-        Three.js *** <br> \
-        Windows Forms ***** <br> \
-        WPF *** <br> \
+        .NET<br> \
+        Boost<br> \
+        Flask<br> \
+        Git<br> \
+        Google Test<br> \
+        OpenGL<br> \
+        Pyramid<br> \
+        Three.js<br> \
         </p> \
          <br> \
     <p>Technologies</p> <br> \
     <p class=\"with_margin\"> \
-        Android ** <br> \
-        Blender * <br> \
-        Doxygen *** <br> \
-        CMake ** <br> \
-        Eclipse *** <br> \
-        Gerrit *** <br> \
-        Git **** <br> \
-        iOS * <br> \
-        Jira *** <br> \
-        Linux *** <br> \
-        Mac OSX **** <br> \
-        Node.js *** <br> \
-        Photoshop **** <br> \
-        Processing **** <br> \
-        Qt Creator *** <br> \
-        Tortoise SVN *** <br> \
-        Unity **** <br> \
-        UML *** <br> \
-        Visual Studio **** <br> \
-        Windows **** <br> \
-        Word ***** <br> \
-        Wings 3D *** <br> \
-        Xcode ** <br> \
+        Android<br> \
+        Blender<br> \
+        Doxygen<br> \
+        CMake<br> \
+        Gerrit<br> \
+        Git<br> \
+        Jira<br> \
+        Linux<br> \
+        Mac OSX<br> \
+        Photoshop<br> \
+        Processing<br> \
+        Qt Creator<br> \
+        Unity<br> \
+        UML<br> \
+        Visual Studio<br> \
+        Windows<br> \
+        Word<br> \
+        Wings 3D<br> \
+        Xcode<br> \
         </p> \
      <br> \
     <p>Buzzwords</p> <br> \
     <p class=\"with_margin\"> \
-        Design Patterns, Software Architecture, Multi-Threading, UI, Best Practices, Agile, Clean Code, Simplicity \
+        Design Patterns, Kaizen, Software Architecture, Multi-Threading, UI, Best Practices, Agile, Clean Code, Simplicity \
     </p> \
     ";
 
@@ -93,21 +72,22 @@ var WantHTML =
 "<p>What I Want To Do</p> \
 <br> \
 <p class=\"with_margin\"> \
-C++ <br> \
-Shader Programming <br> \
-Cool Algorithms <br> \
-Neural Networks <br> \
-Machine Learning <br> \
-Computer Graphics <br> \
-Software Architecture <br> \
-C# <br> \
-Parallelism <br> \
-Python <br> \
-Create Atmosphere <br> \
-Sustainability Projects <br> \
-Cutting Edge Videogames <br> \
-High Performance Stuff <br> \
-Combine Mental and Physical Work \
+write C++<br> \
+write Python<br> \
+write C#<br> \
+Automate & Streamline Processes<br> \
+Improve Code Quality<br> \
+Program Shaders<br> \
+Program Neural Networks<br> \
+Work in Machine Learning<br> \
+Work in Computer Graphics<br> \
+Architect reusable & scalable Software<br> \
+employ Parallelism<br> \
+Create Atmosphere<br> \
+Work on Sustainability Projects<br> \
+Work on Cutting Edge Videogames<br> \
+High Performance Stuff<br> \
+Combine Mental and Physical Work<br> \
 </p>";
 
 var BscHTML =
@@ -160,7 +140,6 @@ mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
 <a class=\"fineprint\" target=\"_blank\" href=http://www.humus.name>*original cubemap by Humus</a> <br> \
 </p>";
 
-
 var ContentDiv;
 var dragablizer;
 
@@ -210,10 +189,7 @@ var SoapBubblesCubemap;
 var SoapBubblesBubbles;
 
 
-/**
-*/
 function initAndStartWebGLApp() {
-
     if( !ENGINE.initWebGLOrShowErrorMsg())
         return;
 
@@ -222,7 +198,6 @@ function initAndStartWebGLApp() {
     window.addEventListener(
         'resize',
         function( evt) {
-
             var newAspect = window.innerWidth / window.innerHeight;
 
             LensflareCamera.aspect = newAspect;
@@ -248,11 +223,9 @@ function initAndStartWebGLApp() {
 }
 
 
-
 // LOAD ASSETS ### LOAD ASSETS ### LOAD ASSETS ### LOAD ASSETS ### LOAD ASSETS ### LOAD ASSETS ### LOAD ASSETS ### LOAD ASSETS ###
 
-/**
-*/
+
 function loadAssetsAndCreateScenes() {
 
     function loadLensflaresSceneAssets() {
@@ -303,7 +276,6 @@ function loadAssetsAndCreateScenes() {
     }
 
     function loadBuckminsterSceneAssets() {
-
         var cubeTextures = [
           './res/Vindelalven/posx.jpg',
           './res/Vindelalven/negx.jpg',
@@ -314,7 +286,6 @@ function loadAssetsAndCreateScenes() {
         ];
 
         BuckminsterCubemap = THREE.ImageUtils.loadTextureCube(cubeTextures);
-
         createBuckminsterScene();
 
         var button = $("#want");
@@ -327,7 +298,6 @@ function loadAssetsAndCreateScenes() {
     }
 
     function loadVogelkindSceneAssets() {
-
         var loader = new THREE.OBJLoader();
         loader.load(
             // resource URL
@@ -335,9 +305,7 @@ function loadAssetsAndCreateScenes() {
             // Function when resource is loaded
             function ( object ) {
                 VogelkindVogel = object;
-
                 createVogelkindScene();
-
                 var button = $("#vita");
                 button.click(function(){
                     ENGINE.currentUpdateFunction = scenes.Vogelkind;
@@ -351,7 +319,6 @@ function loadAssetsAndCreateScenes() {
     function loadSoapBubblesSceneAssets() {
         // TODO BUTTON FREISCHALTEN
 
-
         var cubeTextures = [
           './res/Vindelalven/posx.jpg',
           './res/Vindelalven/negx.jpg',
@@ -362,7 +329,6 @@ function loadAssetsAndCreateScenes() {
         ];
 
         SoapBubblesCubemap = THREE.ImageUtils.loadTextureCube(cubeTextures);
-
         createSoapBubblesScene();
 
         var button = $("#about");
@@ -380,17 +346,16 @@ function loadAssetsAndCreateScenes() {
     loadSoapBubblesSceneAssets();
 }
 
-/**
-*/
+
 function startInitialScene() {
     $("#status").remove();
     ENGINE.frameLoop();
 }
 
+
 // LENSFLARES ### LENSFLARES ### LENSFLARES ### LENSFLARES ### LENSFLARES ### LENSFLARES ### LENSFLARES ### LENSFLARES ### LENSFLARES
 
-/**
-*/
+
 function createLensflaresScene() {
     var aspect = ENGINE.canvas.width / ENGINE.canvas.height;
 
@@ -418,30 +383,24 @@ function createLensflaresScene() {
     LensflareScene.add( plane );
 }
 
-/**
-*/
+
 function updateLensflaresScene() {
-
     var multiplier = Math.min( 0.0005, ENGINE.elapsedTime * 0.0000001);
-
     LensflareMaterial.uniforms["time"].value = multiplier * ENGINE.elapsedTime;
-
     ENGINE.renderer.render( LensflareScene, LensflareCamera );
 }
 
+
 // LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP ### LAVALAMP
 
-/**
-*/
-function createLavaLampScene() {
 
+function createLavaLampScene() {
     LavalampScene = new THREE.Scene();
 
     LavalampCamera = new THREE.PerspectiveCamera(45, ENGINE.canvas.width / ENGINE.canvas.height, 1, 10000);
     LavalampCamera.position.set(0, 0, 500);
     LavalampCamera.lookAt( LavalampScene.position);
     LavalampScene.add(LavalampCamera);
-
 
     var uniforms = {
         time:               { type: 'f', value: 0.0 },
@@ -456,11 +415,9 @@ function createLavaLampScene() {
 		fragmentShader: LavalampFrag
 	});
 
-
 	var radius = 50, segments = 128, rings = 128;
 	LavalampSphere = new THREE.Mesh( new THREE.SphereGeometry(radius, segments, rings),
                                      shaderMaterial);
-
 	LavalampScene.add(LavalampSphere);
 
     LavalampComposer = new THREE.EffectComposer(ENGINE.renderer);
@@ -475,8 +432,6 @@ function createLavaLampScene() {
 }
 
 
-/**
-*/
 function updateLavaLampScene(){
     var brightness = Math.pow( 0.001 * ENGINE.elapsedTime, 8);
     var uniforms = LavalampSphere.material.uniforms;
@@ -505,10 +460,10 @@ function updateLavaLampScene(){
     }
 }
 
+
 // BUCKMINSTER ### BUCKMINSTER ### BUCKMINSTER ### BUCKMINSTER ### BUCKMINSTER ### BUCKMINSTER ### BUCKMINSTER ### BUCKMINSTER
 
-/**
-*/
+
 function createBuckminsterScene() {
     BuckminsterScene = new THREE.Scene();
     BuckminsterScene.fog = new THREE.Fog( 0x000000, 800, 1250 );
@@ -522,15 +477,11 @@ function createBuckminsterScene() {
     light.position.set( 1000, 800, -500 );
     BuckminsterScene.add( light );
 
-
     createFullerene();
 }
 
 
-/**
-*/
 function updateBuckminsterScene() {
-
     // rotate around global x axis
     var q = new THREE.Quaternion();
     q.setFromAxisAngle( new THREE.Vector3(1,0,0), ENGINE.mouseOffsetY * 0.0005);
@@ -550,20 +501,17 @@ function updateBuckminsterScene() {
         var inverseDiff = 1 - Math.abs( mousePosY - normalizedSpherePos); // [0,1]
 
         var timeDependentScaling = Math.sin( -Math.abs( timingFactor) * 2 * Math.PI - normalizedSpherePos * (3 + 0.1*i)) * 0.5 + 0.5;
-
         var scale = Math.max(0, (Math.sin( inverseDiff * Math.PI - Math.PI/2) + 1) * 0.5 + 1.6 * timeDependentScaling + 0.2);
 
         sphere.scale.set( scale, scale, scale);
     }
-
     ENGINE.renderer.render( BuckminsterScene, BuckminsterCamera );
 }
 
 
 // VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND ### VOGELKIND
 
-/**
-*/
+
 function createVogelkindScene() {
 
     VogelkindScene = new THREE.Scene();
@@ -592,20 +540,16 @@ function createVogelkindScene() {
 }
 
 
-/**
-*/
 function updateVogelkindScene() {
     BuckminsterCubemap.mapping = THREE.CubeRefractionMapping;
     VogelkindVogel.rotateY( 0.0002 * ENGINE.msSinceLastFrame - ENGINE.mouseOffsetX * 0.002);
-
     ENGINE.renderer.render( VogelkindScene, VogelkindCamera );
 }
 
 
 // SOAPBUBBLES ### SOAPBUBBLES ### SOAPBUBBLES ### SOAPBUBBLES ### SOAPBUBBLES ### SOAPBUBBLES ### SOAPBUBBLES ### SOAPBUBBLES ###
 
-/**
-*/
+
 function createSoapBubblesScene() {
 
     SoapBubblesScene = new THREE.Scene();
@@ -614,7 +558,6 @@ function createSoapBubblesScene() {
     SoapBubblesCamera.position.set(0, 0, 500);
     SoapBubblesCamera.lookAt( SoapBubblesScene.position);
     SoapBubblesScene.add(SoapBubblesCamera);
-
 
     var cubemapShader = THREE.ShaderLib["cube"];
     var cubeMapShaderUniforms = THREE.UniformsUtils.clone( cubemapShader.uniforms );
@@ -637,7 +580,6 @@ function createSoapBubblesScene() {
 
     THREE.FresnelShader.uniforms["tCube"].value = SoapBubblesCubemap;
     THREE.FresnelShader.uniforms["mFresnelBias"].value = 0.1;
-
 
     var fresnelShaderMaterial = new THREE.ShaderMaterial({
 		uniforms:     	THREE.FresnelShader.uniforms,
@@ -668,13 +610,10 @@ function createSoapBubblesScene() {
             Math.random()*4500 - 500
         );
     }
-
     SoapBubblesScene.add( SoapBubblesBubbles);
 }
 
 
-/**
-*/
 function updateSoapBubbleScene() {
 
     var mousePosX = ENGINE.mouseX / ENGINE.canvas.width;     // [0,1]
@@ -695,7 +634,6 @@ function updateSoapBubbleScene() {
     SoapBubblesCamera.position.y += targetCamPosY < currentCamPosY ? -positionChangeY : positionChangeY;
 
     SoapBubblesCamera.lookAt( SoapBubblesScene.position);
-
 
     var bubbles = SoapBubblesBubbles.children;
 
@@ -727,8 +665,7 @@ function updateSoapBubbleScene() {
 
 // HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS ### HELPERS
 
-/**
-*/
+
 function createPipe(v1, v2, thickness, radiusSegments, heightSegments, material ) {
     // edge from X to Y
     var direction = new THREE.Vector3().subVectors( v2, v1 ).normalize();
@@ -747,8 +684,6 @@ function createPipe(v1, v2, thickness, radiusSegments, heightSegments, material 
 }
 
 
-/**
-*/
 function createFullerene() {
     // c60 fullerene - what else ;)
     // pipe vars
@@ -862,26 +797,21 @@ function createFullerene() {
     BuckminsterFullerene.scale.set( scale, scale, scale);
 }
 
-/**
-*/
-function setSoapBubbleDirectionAndPosition( bubble) {
 
+function setSoapBubbleDirectionAndPosition( bubble) {
     bubble.direction.set( (Math.random()-0.5)*3, (Math.random()-0.5)*10, (Math.random()-0.5)*0.2 );
 
     var strongestDirection = Math.abs(bubble.direction.x) > Math.abs(bubble.direction.y) ? 'x' : 'y';
-
     var startPosX, startPosY, startPosZ;
 
     if( strongestDirection === 'x') {
         startPosX = bubble.direction.x > 0 ? -3000 : 3000;
         startPosY = (Math.random()-0.5)*3000;
-
     } else /* === 'y'*/ {
         startPosX = (Math.random()-0.5)*3000;
         startPosY = bubble.direction.x > 0 ? -3000 : 3000;
     }
 
     startPosZ = Math.random()*4500 - 4000;
-
     bubble.position.set( startPosX, startPosY, startPosZ);
 }
