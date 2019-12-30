@@ -1,5 +1,5 @@
 /**
- * @author langenhagen
+ * @author andreasl
  *
  * Additive horizontal linear blur.
  */

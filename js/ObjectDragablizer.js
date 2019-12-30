@@ -1,6 +1,6 @@
-// author langenhagen
+// @author andreasl
 // found here http://stackoverflow.com/questions/6914360/how-to-scroll-through-a-div-by-dragging-and-not-by-using-the-scroll-bars
-// 191228
+// 19-12-30
 
 /**
 @param dragElement The element to be dragged.
