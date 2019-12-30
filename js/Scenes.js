@@ -126,7 +126,6 @@ var AboutHTML =
 " <br> \ <p style=\"padding: 34px;\"> \
 <br> \
 <br> \
-<br> \
 mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
 <br> \
 <a target=\"_blank\" href=\"https://github.com/langenhagen\">github.com/langenhagen</a> <br> \
@@ -137,7 +136,7 @@ mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
 <br> <a class=\"fineprint\">Stuff to mention:</a> <br> \
 <a class=\"fineprint\" target=\"_blank\" href=https://www.shadertoy.com/view/lslSRf>*c60 fullerene idea snitched from mplanck</a> <br> \
 <a class=\"fineprint\" target=\"_blank\" href=http://www.humus.name>*original cubemap by Humus</a> <br> \
-<br> <a class=\"fineprint\">v1.0.2</a> <br> \
+<br> <a class=\"fineprint\">v1.0.3</a> <br> \
 </p>";
 
 var ContentDiv;
