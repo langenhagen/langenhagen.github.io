@@ -1,7 +1,7 @@
 /* My Personal Page css file.
  *
- * author: langenhagen
- * version: 191228
+ * author: andreasl
+ * version: 19-12-30
  */
 
 body {
@@ -158,5 +158,23 @@ div {
     #content_container {
         left:30%;
         width:70%;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) and (min-width: 1025px) {
+     body {
+        font-size:36px;
+    }
+
+    .fineprint {
+        font-size: 24px;
+    }
+
+    #vita_link_left {
+        font-size:40px;
+    }
+
+    #vita_link_right {
+        font-size:40px;
     }
 }
