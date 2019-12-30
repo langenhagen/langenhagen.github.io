@@ -160,25 +160,3 @@ div {
         width:70%;
     }
 }
-
-@media only screen and (max-aspect-ratio: 1/1) and (min-width: 1025px) {
-     body {
-        font-size:36px;
-    }
-
-    p {
-        background-color:red;
-    }
-
-    .fineprint {
-        font-size: 24px;
-    }
-
-    #vita_link_left {
-        font-size:40px;
-    }
-
-    #vita_link_right {
-        font-size:40px;
-    }
-}
