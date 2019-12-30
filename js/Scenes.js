@@ -9,11 +9,13 @@ my name is Andreas and I am a software developer with a tendency towards C++, CG
 Please make yourself at home and have a little look if you like. \
 </p>";
 
-var CanHTML =
-"<p>What I Can Do </p> <br> \
+var DoHTML =
+"<p>What I Do</p> \
+<br> \
 <p> \
 Below is a listing of some technologies I love and work with.<br> \
-<p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/expertises-gantt/\">here</a> for a list of what I did and do over the years.</p> \
+<p>I store my hobby projects on <a href=\"https://github.com/langenhagen\">GitHub</a>.<br> \
+You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/expertises-gantt/\">here</a> for a list of what I did and do over the years.</p> \
 </p> \
 <br> \
     <p>Programming Languages</p> <br> \
@@ -268,7 +270,7 @@ function loadAssetsAndCreateScenes() {
             var button = $("#can");
             button.click(function(){
                 ENGINE.currentUpdateFunction = scenes.Lavalamp;
-                ContentDiv.html(CanHTML);
+                ContentDiv.html(DoHTML);
 
             });
             button.removeClass("blocked_link").addClass("active_link");
