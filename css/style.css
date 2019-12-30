@@ -164,6 +164,7 @@ div {
 @media only screen and (max-aspect-ratio: 1/1) and (min-width: 1025px) {
      body {
         font-size:36px;
+        background-color:red;
     }
 
     .fineprint {
