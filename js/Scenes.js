@@ -102,7 +102,7 @@ were all part of my work. And hey, you can change skins of the widgets :D \
 <br> <br> \
 You can find my Bachelor's Thesis <a target=\"_blank\" href=\"http://langenhagen.cc/res/Implementierung-eines-3D-User-Interfaces.pdf\">here</a> \
 and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Bachelor-Thesis\">github.com/langenhagen/Bachelor-Thesis</a>. <br> \
-The thesis is in German. \
+The thesis is written in German. \
 </p>";
 
 var MscHTML =
