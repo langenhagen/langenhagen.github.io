@@ -137,7 +137,7 @@ mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
 <br> <a class=\"fineprint\">Stuff to mention:</a> <br> \
 <a class=\"fineprint\" target=\"_blank\" href=https://www.shadertoy.com/view/lslSRf>*c60 fullerene idea snitched from mplanck</a> <br> \
 <a class=\"fineprint\" target=\"_blank\" href=http://www.humus.name>*original cubemap by Humus</a> <br> \
-<br> <a class=\"fineprint\">v1.0.1</a> <br> \
+<br> <a class=\"fineprint\">v1.0.2</a> <br> \
 </p>";
 
 var ContentDiv;
@@ -268,7 +268,7 @@ function loadAssetsAndCreateScenes() {
             var button = $("#can");
             button.click(function(){
                 ENGINE.currentUpdateFunction = scenes.Lavalamp;
-                ContentDiv.html( CanHTML);
+                ContentDiv.html(CanHTML);
 
             });
             button.removeClass("blocked_link").addClass("active_link");
