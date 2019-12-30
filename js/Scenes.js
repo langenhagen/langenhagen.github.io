@@ -101,7 +101,7 @@ I got a backend and a real smart home to try things out. This work was lots of f
 were all part of my work. And hey, you can change skins of the widgets :D \
 <br> <br> \
 You can find my Bachelor's Thesis <a target=\"_blank\" href=\"http://langenhagen.cc/res/Implementierung-eines-3D-User-Interfaces.pdf\">here</a> \
-and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Bachelor-Thesis\">github.com/langenhagen</a>. <br> \
+and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Bachelor-Thesis\">github.com/langenhagen/Bachelor-Thesis</a>. <br> \
 The thesis is in German. \
 </p>";
 
@@ -117,7 +117,7 @@ the Database and Information Management Department at TU Berlin (<a target=\"_bl
 I was the first guy to actually use the splendid OPTICS clustering algorithm to solve a computer vision problem - and that with quite okay-ish resuls :) \
 <br> <br> \
 You can find my Master's Thesis <a target=\"_blank\" href=\"http://langenhagen.cc/res/Unsupervised-Detection-of-Salient-Regions-in-Image-Databases.pdf\">here</a> \
-and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Master-Thesis\">github.com/langenhagen</a>. \
+and the source code on <a target=\"_blank\" href=\"https://github.com/langenhagen/Master-Thesis\">github.com/langenhagen/Master-Thesis</a>. \
 </p>";
 
 var VitaHTML =
