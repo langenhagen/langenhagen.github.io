@@ -13,7 +13,7 @@ var CanHTML =
 "<p>What I Can Do </p> <br> \
 <p> \
 Below is a listing of some technologies I love and work with.<br> \
-<p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/Expertises-Gantt/\">here</a> for a list of what I did and do over the years.</p> \
+<p>You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/expertises-gantt/\">here</a> for a list of what I did and do over the years.</p> \
 </p> \
 <br> \
     <p>Programming Languages</p> <br> \
