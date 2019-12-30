@@ -123,20 +123,21 @@ var VitaHTML =
 " <a id=\"vita_link_left\" target=\"_blank\" href=\"./res/CV-de.pdf\">[DE]</a> <a id=\"vita_link_right\" target=\"_blank\" href=\"./res/CV-en.pdf\">[EN]</a>";
 
 var AboutHTML =
-" <br> \ <p style=\"padding: 34px;\"> \
+"<br> \
+<p style=\"padding: 34px;\"><br \
 <br> \
 <br> \
-mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc <br> \
+mail: andreas <squanch> langenhagen <wubbalubbadubdub> cc<br> \
 <br> \
-<a target=\"_blank\" href=\"https://github.com/langenhagen\">github.com/langenhagen</a> <br> \
-<a target=\"_blank\" href=\"https://repl.it/@barn07\">repl.it/@barn07</a> <br> \
+<a target=\"_blank\" href=\"https://github.com/langenhagen\">github.com/langenhagen</a><br> \
+<a target=\"_blank\" href=\"https://repl.it/@barn07\">repl.it/@barn07</a><br> \
 <br> \
 <br> \
 <br> \
-<br> <a class=\"fineprint\">Stuff to mention:</a> <br> \
-<a class=\"fineprint\" target=\"_blank\" href=https://www.shadertoy.com/view/lslSRf>*c60 fullerene idea snitched from mplanck</a> <br> \
-<a class=\"fineprint\" target=\"_blank\" href=http://www.humus.name>*original cubemap by Humus</a> <br> \
-<br> <a class=\"fineprint\">v1.0.3</a> <br> \
+<br> <a class=\"fineprint\">Stuff to mention:</a><br> \
+<a class=\"fineprint\" target=\"_blank\" href=https://www.shadertoy.com/view/lslSRf>*c60 fullerene idea snitched from mplanck</a><br> \
+<a class=\"fineprint\" target=\"_blank\" href=http://www.humus.name>*original cubemap by Humus</a><br> \
+<br> <span class=\"fineprint\">v1.0.4</span><br> \
 </p>";
 
 var ContentDiv;
