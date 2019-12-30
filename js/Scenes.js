@@ -10,11 +10,10 @@ Please make yourself at home and have a little look if you like. \
 </p>";
 
 var DoHTML =
-"<p>What I Do</p> \
-<br> \
+"<p>What I Do </p> <br> \
 <p> \
 Below is a listing of some technologies I love and work with.<br> \
-<p>I store my hobby projects on <a href=\"https://github.com/langenhagen\">GitHub</a>.<br> \
+I store my private projects on <a href=\"https://github.com/langenhagen\">Github</a>.<br> \
 You can also look <a target=\"_blank\" href=\"https://langenhagen.github.io/expertises-gantt/\">here</a> for a list of what I did and do over the years.</p> \
 </p> \
 <br> \
