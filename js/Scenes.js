@@ -75,7 +75,7 @@ var WantHTML =
 - write C++<br> \
 - write Python<br> \
 - write C#<br> \
-- automate & Streamline Processes<br> \
+- automate & streamline Processes<br> \
 - improve Code Quality<br> \
 - program Shaders<br> \
 - program Neural Networks<br> \
