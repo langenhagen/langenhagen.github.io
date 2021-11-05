@@ -120,16 +120,9 @@ div {
     line-height: 150%;
 }
 
-#vita_link_left {
+#vita_link {
     top: 47.75%;
-    left: 33%;
-    font-size:28px;
-    position:fixed;
-}
-
-#vita_link_right {
-    top: 47.75%;
-    left: 65%;
+    left: 50%;
     font-size:28px;
     position:fixed;
 }
@@ -143,11 +136,7 @@ div {
         font-size: 10px;
     }
 
-    #vita_link_left {
-        font-size:14px;
-    }
-
-    #vita_link_right {
+    #vita_link {
         font-size:14px;
     }
 
