@@ -1,63 +1,524 @@
-<!-- -------------------------------------
-@author: langenhagen
--------------------------------------- -->
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Andreas Langenhagen — Staff Software Engineer</title>
 
-        <title>Andreas Langenhagen</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"/>
+        <link rel="shortcut icon" href="assets/img/favicon.ico" />
 
-        <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <link rel="shortcut icon" href="./res/favicon.ico">
+        <link rel="stylesheet" href="assets/css/tokens.css" />
+        <link rel="stylesheet" href="assets/css/base.css" />
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/components.css" />
 
+        <!-- Resolve theme before paint to avoid flash. -->
+        <script>
+            (function () {
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
     </head>
 
-    <body onload="initAndStartWebGLApp()">
+    <body>
+        <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+        >☀</button>
 
-        <canvas id="gl"></canvas>
+        <main>
+            <!-- HERO -->
+            <section class="hero container" id="top">
+                <div class="hero-inner">
+                    <p class="section-eyebrow">Berlin · Available for collaboration</p>
+                    <h1 class="hero-name">Andreas Langenhagen</h1>
+                    <p class="hero-tagline">
+                        Staff Software Engineer.
+                        Backends, robots, and shaders.
+                    </p>
+                    <div class="hero-cta">
+                        <a class="btn btn--primary" href="assets/CV.pdf" target="_blank" rel="noopener">
+                            CV
+                        </a>
+                        <a class="btn" href="https://github.com/langenhagen" target="_blank" rel="noopener">
+                            GitHub
+                        </a>
+                        <a class="btn" href="https://www.linkedin.com/in/andreas-langenhagen/" target="_blank" rel="noopener">
+                            LinkedIn
+                        </a>
+                        <a class="btn" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </section>
 
-        <div id="status">. . .</div>
+            <!-- SPECIALTIES -->
+            <section class="section container" id="specialties">
+                <p class="section-eyebrow">What I do</p>
+                <h2 class="section-title">Specialties</h2>
+                <div class="specialties-grid">
+                    <article class="specialty">
+                        <h3>Backend &amp; Distributed Systems</h3>
+                        <p>
+                            Async Python services, event-driven architectures,
+                            cloud-native deployments.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Python</li>
+                            <li class="tag">FastAPI</li>
+                            <li class="tag">Pydantic</li>
+                            <li class="tag">Kafka</li>
+                            <li class="tag">Postgres</li>
+                            <li class="tag">Kubernetes</li>
+                            <li class="tag">Azure</li>
+                            <li class="tag">AWS</li>
+                        </ul>
+                    </article>
 
+                    <article class="specialty">
+                        <h3>Industrial Robotics</h3>
+                        <p>
+                            Working with collaborative and industrial robots
+                            since 2021. Edge-cloud sync, robot programming
+                            languages, infrastructure for real hardware.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">ABB</li>
+                            <li class="tag">FANUC</li>
+                            <li class="tag">KUKA</li>
+                            <li class="tag">Universal Robots</li>
+                            <li class="tag">Yaskawa</li>
+                        </ul>
+                    </article>
 
-        <div class="link_container">
-            <div class="blocked_link"  id="me"   ><span>Me</span></div>
-            <div class="blocked_link" id="can"  ><span>What I Do</span></div>
-            <div class="blocked_link" id="want" ><span>What I Want To Do</span></div>
-            <div class="blocked_link" id="bsc" ><span>Bachelor's Thesis</span></div>
-            <div class="blocked_link" id="msc" ><span>Master's Thesis</span></div>
-            <div class="blocked_link" id="vita" ><span>Vita</span></div>
-            <div class="blocked_link" id="about"><span>About</span></div>
-        </div>
+                    <article class="specialty">
+                        <h3>Computer Graphics &amp; Shaders</h3>
+                        <p>
+                            GLSL, HLSL, OpenGL, WebGL. Procedural shaders,
+                            post-processing, generative visuals.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">GLSL</li>
+                            <li class="tag">HLSL</li>
+                            <li class="tag">OpenGL</li>
+                            <li class="tag">WebGL</li>
+                            <li class="tag">Three.js</li>
+                        </ul>
+                    </article>
 
-        <div id="content_container">
-            <div id="content"></div>
-        </div>
+                    <article class="specialty">
+                        <h3>Tooling &amp; Developer Experience</h3>
+                        <p>
+                            CLIs, automation, build systems, dotfiles.
+                            Small tools that remove friction.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Bash</li>
+                            <li class="tag">Linux</li>
+                            <li class="tag">CMake</li>
+                            <li class="tag">Docker</li>
+                            <li class="tag">Git</li>
+                            <li class="tag">CI/CD</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
 
+            <!-- PROJECTS -->
+            <section class="section container" id="projects">
+                <p class="section-eyebrow">Selected work</p>
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <article class="card">
+                        <h3 class="card-title">Experiments &amp; Tutorials</h3>
+                        <p class="card-desc">
+                            A large collection of experiments, snippets, and
+                            showcases across many languages.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Polyglot</li>
+                            <li class="tag">Snippets</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/experiments-and-tutorials" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Recipes</h3>
+                        <p class="card-desc">
+                            Static cooking recipe blog with filtering,
+                            categories, and zero backend.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Blog</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://langenhagen.github.io/recipes/" target="_blank" rel="noopener">Live →</a>
+                            <a class="card-link" href="https://github.com/langenhagen/recipes" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Awesome Lists</h3>
+                        <p class="card-desc">
+                            Personal curated lists of Python tools, reads,
+                            and other good things. Markdown built to static
+                            HTML by a shell script.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Blog</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://langenhagen.github.io/awesome-lists/" target="_blank" rel="noopener">Live →</a>
+                            <a class="card-link" href="https://github.com/langenhagen/awesome-lists" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Tile Viewer</h3>
+                        <p class="card-desc">
+                            HTML/CSS/JS based tile image viewer for browsing
+                            large image collections.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">JS</li>
+                            <li class="tag">CSS Grid</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://langenhagen.github.io/tile-viewer/" target="_blank" rel="noopener">Live →</a>
+                            <a class="card-link" href="https://github.com/langenhagen/tile-viewer" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">WebGL Fun</h3>
+                        <p class="card-desc">
+                            A playground of WebGL experiments —
+                            soap bubbles, perlin wobble, lava balls,
+                            disco towers.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">GLSL</li>
+                            <li class="tag">Three.js</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://langenhagen.github.io/webgl-fun/" target="_blank" rel="noopener">Live →</a>
+                            <a class="card-link" href="https://github.com/langenhagen/webgl-fun" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Vincent</h3>
+                        <p class="card-desc">
+                            Whisper-, Kokoro-, and OpenCode-powered voice
+                            chat agent CLI. Speech in, speech out.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Python</li>
+                            <li class="tag">Whisper</li>
+                            <li class="tag">Kokoro</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/vincent" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Planetfall</h3>
+                        <p class="card-desc">
+                            Vibe-coded endless 3D falling game, inspired by
+                            LEGO City Undercover.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Python</li>
+                            <li class="tag">3D</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/planetfall" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Explore with dmenu</h3>
+                        <p class="card-desc">
+                            Desktop file browser for Linux (and probably
+                            macOS), built on top of dmenu. My most popular
+                            open-source release.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Bash</li>
+                            <li class="tag">dmenu</li>
+                            <li class="tag">Linux</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/explore-with-dmenu" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Wandelbots Nova SDK</h3>
+                        <p class="card-desc">
+                            Open-source SDK for the Wandelbots Nova robot
+                            platform. Async Python, multi-vendor robot
+                            abstractions. Co-authored and maintained.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Python</li>
+                            <li class="tag">Robotics</li>
+                            <li class="tag">OSS</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/wandelbotsgmbh/wandelbots-nova" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">OPTICS clustering</h3>
+                        <p class="card-desc">
+                            C++ implementation of the OPTICS density-based
+                            cluster ordering algorithm. From my
+                            master&rsquo;s work.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">C++</li>
+                            <li class="tag">Clustering</li>
+                            <li class="tag">Computer Vision</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/OPTICS" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">DBSCAN clustering</h3>
+                        <p class="card-desc">
+                            Simpler companion to the OPTICS work above.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">C++</li>
+                            <li class="tag">Clustering</li>
+                            <li class="tag">Computer Vision</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/DBSCAN" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Master&rsquo;s Thesis</h3>
+                        <p class="card-desc">
+                            Unsupervised detection of salient regions in
+                            image databases. First use of OPTICS for a CV
+                            problem.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Computer Vision</li>
+                            <li class="tag">Clustering</li>
+                            <li class="tag">C++</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/Master-Thesis" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card-title">Bachelor&rsquo;s Thesis</h3>
+                        <p class="card-desc">
+                            3D user interface to control a real smart home,
+                            built at DAI-Labor, TU Berlin. UI, composition,
+                            3D modelling. In German.
+                        </p>
+                        <ul class="tags">
+                            <li class="tag">Java</li>
+                            <li class="tag">3D UI</li>
+                            <li class="tag">DAI-Labor</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/langenhagen/Bachelor-Thesis" target="_blank" rel="noopener">Code →</a>
+                        </div>
+                    </article>
+                </div>
+                <p style="margin-top: var(--sp-6); color: var(--muted); font-size: var(--fs-sm);">
+                    More on
+                    <a href="https://github.com/langenhagen" target="_blank" rel="noopener">github.com/langenhagen</a>.
+                </p>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section class="section container" id="experience">
+                <p class="section-eyebrow">Where I worked</p>
+                <h2 class="section-title">Experience</h2>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Staff Software Engineer · Wandelbots
+                        </h3>
+                        <p class="timeline-meta">Aug 2024 – present · Dresden &amp; Berlin (hybrid)</p>
+                        <ul class="timeline-bullets">
+                            <li><strong>Distributed Kubernetes platform</strong>; mostly <strong>async Python</strong>, plus full-stack <strong>TypeScript</strong> and <strong>Golang</strong>.</li>
+                            <li><strong>Co-author and maintainer</strong> of the <strong>Wandelbots Nova SDK</strong> and the <strong>Wandelscript</strong> robot programming language.</li>
+                            <li><strong>Designed and built</strong> an <strong>Azure / Fabric ETL pipeline</strong> for industrial robot data streams.</li>
+                            <li>Cloud functionality, infrastructure, <strong>authentication and authorization</strong> via <strong>Microsoft Entra</strong> and <strong>OpenFGA</strong>.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Development Manager / Senior Python Engineer · Micropsi Industries
+                        </h3>
+                        <p class="timeline-meta">Oct 2021 – Jul 2024 · Berlin</p>
+                        <ul class="timeline-bullets">
+                            <li><strong>Built and simplified</strong> the infrastructure that runs <strong>collaborative robots controlled by AI</strong>.</li>
+                            <li><strong>Led cross-functional projects</strong>: <strong>edge-cloud synchronization</strong>, robot-skill duplication, support for new <strong>industrial hardware platforms</strong>, <strong>custom Linux OS</strong> for edge devices.</li>
+                            <li><strong>Led and supervised</strong> coworkers and an intern; planned features, epics, releases.</li>
+                            <li>Filtered job-application CVs and hosted interviews; both <strong>mentor and mentee</strong> in an internal <strong>AWS</strong>-focused mentoring program.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Senior Software Engineer · Tier Mobility
+                        </h3>
+                        <p class="timeline-meta">2021 · Berlin · short engagement</p>
+                    </article>
+
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Senior Python Engineer · Momox
+                        </h3>
+                        <p class="timeline-meta">Aug 2020 – Sep 2021 · Berlin</p>
+                        <ul class="timeline-bullets">
+                            <li><strong>Event-driven, domain-driven distributed</strong> warehouse software.</li>
+                            <li>Helped <strong>pass the 2020 warehouse audit</strong>; added support for new fashion brands across all IT services.</li>
+                            <li><strong>Migrated codebase</strong>, opened up data insights, fixed bugs, improved processes; hosted job interviews.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Backend Python Developer · CeleraOne
+                        </h3>
+                        <p class="timeline-meta">Nov 2018 – Jul 2020 · Berlin</p>
+                        <ul class="timeline-bullets">
+                            <li><strong>SaaS Python middleware</strong> and <strong>on-premise Linux backends</strong> for digital-publisher paywalls.</li>
+                            <li>Automated and simplified processes; implemented <strong>automatic code-quality checks</strong> via <strong>Gerrit CI</strong>.</li>
+                            <li><strong>Supervised two trainees and two students</strong>; moderated meetings; hosted job interviews.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Software Engineer · HERE Technologies
+                        </h3>
+                        <p class="timeline-meta">Mar 2016 – Oct 2018 · Berlin</p>
+                        <ul class="timeline-bullets">
+                            <li><strong>Automotive C++ SDK</strong>, then <strong>mobile SDK</strong> and reference apps for embedded <strong>C++</strong>, <strong>Android</strong>, <strong>iOS</strong>.</li>
+                            <li>Wrote test servers for CI-based testing; contributed to a <strong>cross-language bindings generator</strong> for <strong>C++, Kotlin, Swift, Java</strong>.</li>
+                            <li><strong>Cut CMake configure time roughly in half (~196s → ~90s)</strong> on the mobile SDK.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <h3 class="timeline-role">
+                            Research Assistant · DAI-Labor, TU Berlin
+                        </h3>
+                        <p class="timeline-meta">Jan 2011 – Feb 2014 · Berlin</p>
+                        <ul class="timeline-bullets">
+                            <li><strong>3D smart-home</strong> and <strong>3D immersive e-health</strong> applications; team <strong>computer-graphics expert</strong>.</li>
+                            <li><strong>Gesture detection and image processing</strong> in <strong>Java, C++, C#, HLSL, DirectX, OGRE, XNA, Unity</strong>.</li>
+                            <li>Represented projects at <strong>CeBIT in 2011, 2012, 2013</strong>.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <p style="margin-top: var(--sp-7);">
+                    <a class="btn" href="assets/CV.pdf" target="_blank" rel="noopener">CV</a>
+                    <a class="btn" href="https://langenhagen.github.io/expertises-gantt/" style="margin-left: var(--sp-3);">Tech timeline</a>
+                </p>
+            </section>
+
+            <!-- ABOUT -->
+            <section class="section container" id="about">
+                <p class="section-eyebrow">A bit about me</p>
+                <h2 class="section-title">About</h2>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <img class="about-photo" src="assets/img/profile.jpg" alt="Andreas Langenhagen" />
+                        <div class="about-prose">
+                            <p>
+                                Hi, I&rsquo;m Andreas. Software engineer in
+                                Berlin. Started in computer graphics, drifted
+                                into backends and distributed systems, lately
+                                working on industrial robots.
+                            </p>
+                            <p>
+                                I care about people, processes, and code the
+                                next person can read. Outside of work I tinker
+                                with shaders, small CLIs, and the occasional
+                                vibe-coded game.
+                            </p>
+                            <p>
+                                German native, English working language.
+                                Mostly Python and Kubernetes these days, with
+                                C++ that&rsquo;s rusty but still there.
+                            </p>
+                            <p>
+                                Outside of computers: running and basketball
+                                are the sports I love. The rest of my free
+                                time goes into crafting and playing the guitar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <aside class="googley" aria-hidden="true">
+                        <div class="googley-eyes">
+                            <div class="googley-eye"><div class="googley-pupil"></div></div>
+                            <div class="googley-eye"><div class="googley-pupil"></div></div>
+                        </div>
+                        <div class="googley-mouth">
+                            <svg viewBox="0 0 100 50">
+                                <path d="M10,10 Q50,60 90,10" />
+                            </svg>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="section container" id="contact">
+                <p class="section-eyebrow">Get in touch</p>
+                <h2 class="section-title">Contact</h2>
+                <p>
+                    Email:
+                    <a id="playful-email" href="#" class="mono">andreas<span class="email-noise">x7q</span> [at] <span class="email-noise">k3z</span>langenhagen<span class="email-noise">m9p</span> [dot] <span class="email-noise">v2n</span>cc</a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/andreas-langenhagen/" target="_blank" rel="noopener">linkedin.com/in/andreas-langenhagen</a><br />
+                    <a href="https://github.com/langenhagen" target="_blank" rel="noopener">github.com/langenhagen</a><br />
+                    <span class="mono" style="color: var(--muted);">Berlin, Germany</span>
+                </p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    &copy; 2026 Andreas Langenhagen ·
+                    <span class="mono">v2.0.0</span>
+                    <a class="footer-egg" href="googley-eyes.html" title="A small detour" aria-label="Googley eyes">·</a>
+                </div>
+                <div>
+                    <a href="https://github.com/langenhagen/langenhagen.github.io" target="_blank" rel="noopener">Source</a>
+                    · MIT License
+                </div>
+            </div>
+        </footer>
+
+        <script type="module" src="assets/js/main.js"></script>
     </body>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script>!window.jQuery && document.write('<script src="./js/jquery-2.1.4.min.js"><\/script>')</script>
-
-    <script src="https://cdn.jsdelivr.net/threejs/0.0.0-r73/three.min.js"></script>
-    <script>!window.THREE && document.write('<script src=\".\/js\/three-r73.min.js\"><\/script>')</script>
-
-    <script src="./js/Detector.js"></script>
-    <script src="./js/EffectComposer.js"></script>
-    <script src="./js/RenderPass.js"></script>
-    <script src="./js/ShaderPass.js"></script>
-    <script src="./js/MaskPass.js"></script>
-    <script src="./js/CopyShader.js"></script>
-    <script src="./js/OBJLoader.js"></script>
-
-    <script src="./js/FresnelShader.js"></script>
-    <script src="./js/AdditiveLinearBlurHorizontalShader.js"></script>
-
-    <script src="./js/ObjectDragablizer.js"></script>
-    <script src="./js/Utils.js"></script>
-    <script src="./js/Engine.js"></script>
-    <script src="./js/Scenes.js"></script>
-
 </html>

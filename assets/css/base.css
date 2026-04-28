@@ -1,0 +1,102 @@
+/* Base reset and element defaults. */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-md);
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 var(--sp-4);
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, var(--fs-3xl));
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, var(--fs-2xl));
+}
+
+h3 {
+    font-size: var(--fs-xl);
+}
+
+p {
+    margin: 0 0 var(--sp-4);
+}
+
+/* Pin link colors to the classic browser defaults so they look identical
+ * in light and dark mode. .btn overrides these with its own colors. */
+a {
+    text-underline-offset: 3px;
+}
+
+a:link {
+    color: #0000ee;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:active {
+    color: #ff0000;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: var(--r-sm);
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    margin: 0 0 var(--sp-4);
+    padding-left: var(--sp-5);
+}
+
+li + li {
+    margin-top: var(--sp-1);
+}
+
+/* Reset that margin where lists are pill rows / dense bullets. */
+.tags li + li,
+.timeline-bullets li + li {
+    margin-top: 0;
+}
+
+.mono {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+/* Email obfuscation: hidden noise tokens for naive scrapers. */
+.email-noise {
+    display: none;
+}

@@ -1,0 +1,232 @@
+/* Reusable components: buttons, cards/specialties, tags, googley-eyes, theme toggle. */
+
+/* Buttons. The :link/:visited selectors match the specificity of base.css's
+ * a:link/a:visited rules so .btn keeps its black/white colors on anchors. */
+.btn,
+.btn:link,
+.btn:visited {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-3) var(--sp-5);
+    border: 1px solid var(--text);
+    border-radius: var(--r-sm);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text);
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible,
+.btn:active {
+    background: var(--text);
+    color: var(--page-bg);
+}
+
+.btn--primary,
+.btn--primary:link,
+.btn--primary:visited {
+    background: var(--text);
+    color: var(--page-bg);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible,
+.btn--primary:active {
+    background: var(--page-bg);
+    color: var(--text);
+}
+
+/* Cards and specialties — same shape, different content. */
+.card,
+.specialty {
+    border: 1px solid var(--border);
+    padding: var(--sp-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+}
+
+.card-title,
+.specialty h3 {
+    margin: 0;
+    font-size: var(--fs-lg);
+}
+
+.card-desc,
+.specialty p {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    line-height: 1.55;
+    flex: 1;
+}
+
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-top: var(--sp-2);
+}
+
+.card-link {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+}
+
+/* Timeline entry */
+.timeline-role {
+    margin: 0 0 var(--sp-1);
+    font-size: var(--fs-lg);
+}
+
+.timeline-meta {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 var(--sp-3);
+}
+
+.timeline-bullets {
+    margin: 0;
+    padding-left: var(--sp-5);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+}
+
+.timeline-bullets li {
+    color: var(--muted);
+}
+
+/* Highlighted phrases pop against the muted bullet body via color alone. */
+.timeline-bullets strong {
+    color: var(--text);
+    font-weight: inherit;
+}
+
+/* Googley eyes — always on a white island so they read in both themes. */
+.googley {
+    --eye-size: 64px;
+    --pupil-size: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    color: #1a1208;
+    padding: var(--sp-6);
+    border-radius: var(--r-sm);
+}
+
+.googley-eyes {
+    display: flex;
+    gap: var(--sp-5);
+}
+
+.googley-eye {
+    width: var(--eye-size);
+    height: var(--eye-size);
+    background: #fff;
+    border: 2px solid #1a1208;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.googley-pupil {
+    width: var(--pupil-size);
+    height: var(--pupil-size);
+    background: #1a1208;
+    border-radius: 50%;
+    position: absolute;
+    top: calc((var(--eye-size) - var(--pupil-size)) / 2 - 2px);
+    left: calc((var(--eye-size) - var(--pupil-size)) / 2 - 2px);
+    transition: transform 0.1s ease-out;
+}
+
+.googley-mouth {
+    margin-top: var(--sp-4);
+}
+
+.googley-mouth svg {
+    width: 220px;
+    height: 110px;
+}
+
+.googley-mouth path {
+    fill: none;
+    stroke: #1a1208;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .googley-pupil {
+        transition: none;
+    }
+}
+
+/* Theme toggle — fixed top-right icon button */
+.theme-toggle {
+    position: fixed;
+    top: var(--sp-4);
+    right: var(--sp-4);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--page-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    border-color: var(--text);
+}
+
+/* Footer easter-egg link */
+.footer-egg {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background: #f6cb4a;
+    color: #1a1208;
+    font-size: 12px;
+    margin-left: var(--sp-2);
+    text-decoration: none;
+}
+
+.footer-egg:hover {
+    background: #1a1208;
+    color: #f6cb4a;
+}

@@ -1,0 +1,166 @@
+/* Page layout: container, sections, hero, grids, timeline, about. */
+
+.container {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 0 var(--content-pad);
+}
+
+.section {
+    padding: var(--sp-9) 0;
+}
+
+.section + .section {
+    border-top: 1px solid var(--border);
+}
+
+.section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 var(--sp-3);
+}
+
+.section-title {
+    margin-bottom: var(--sp-6);
+}
+
+/* Hero */
+.hero {
+    padding: var(--sp-9) 0 var(--sp-8);
+}
+
+.hero-inner {
+    max-width: 820px;
+}
+
+.hero-name {
+    font-size: clamp(48px, 9vw, 96px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0 0 var(--sp-5);
+}
+
+.hero-tagline {
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--muted);
+    margin-bottom: var(--sp-7);
+    max-width: 640px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+}
+
+/* Grids */
+.specialties-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--sp-5);
+}
+
+/* Timeline.
+ * Rail at left:8px (1px wide), 9px dots positioned at left:-28px so they
+ * center on the rail axis: 8.5 - 32 (sp-6 padding) - 4.5 = -28. */
+.timeline {
+    position: relative;
+    padding-left: var(--sp-6);
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: 1px;
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--sp-7);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--text);
+}
+
+/* About: photo + text + eyes */
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--sp-7);
+    align-items: start;
+}
+
+.about-text {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: var(--sp-5);
+    align-items: start;
+}
+
+.about-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+}
+
+.about-prose {
+    min-width: 0;
+}
+
+@media (max-width: 880px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-text {
+        grid-template-columns: 120px minmax(0, 1fr);
+    }
+    .about-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 540px) {
+    .about-text {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding: var(--sp-7) 0;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-5);
+    justify-content: space-between;
+    align-items: center;
+}
