@@ -9,6 +9,7 @@ const WIGGLE_AMPLITUDE = 10;
 const WAVE_AMPLITUDE = 5;
 const NUM_HUMPS = 2;
 const STEPS = 200;
+const MAX_CUBE_TILT_DEG = 20;
 
 const P0 = { x: 10, y: 10 };
 const P1_BASE = { x: 50, y: 60 };
@@ -46,9 +47,10 @@ function wavePath(mainProgress, fade, tForWiggle) {
 export function initGoogleyEyes(root) {
     if (!root) return;
 
+    const cube = root.querySelector(".googley-cube");
     const eyes = root.querySelectorAll(".googley-eye");
     const mouth = root.querySelector(".googley-mouth path");
-    if (!eyes.length || !mouth) return;
+    if (!cube || !eyes.length || !mouth) return;
 
     // Pupils follow the cursor
     document.addEventListener(
@@ -75,6 +77,32 @@ export function initGoogleyEyes(root) {
     const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
+
+    if (!reduceMotion) {
+        const updateCubeTilt = (event) => {
+            const nx = Math.max(
+                -1,
+                Math.min(1, (event.clientX / window.innerWidth) * 2 - 1)
+            );
+            const ny = Math.max(
+                -1,
+                Math.min(1, (event.clientY / window.innerHeight) * 2 - 1)
+            );
+            cube.style.setProperty(
+                "--cube-tilt-x",
+                `${(-ny * MAX_CUBE_TILT_DEG).toFixed(2)}deg`
+            );
+            cube.style.setProperty(
+                "--cube-tilt-y",
+                `${(nx * MAX_CUBE_TILT_DEG).toFixed(2)}deg`
+            );
+        };
+
+        document.addEventListener("pointermove", updateCubeTilt, {
+            passive: true,
+        });
+    }
+
     if (reduceMotion) return;
 
     let wiggleStart = null;

@@ -2,7 +2,7 @@
 
 import { initGoogleyEyes } from "./googley-eyes.js";
 
-initGoogleyEyes(document.querySelector(".googley"));
+initGoogleyEyes(document.querySelector(".googley-scene"));
 
 // Email obfuscation: real mailto on click, no scrapeable text in DOM.
 const emailEl = document.getElementById("playful-email");
