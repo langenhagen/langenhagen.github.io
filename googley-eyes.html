@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="only light" />
     <title>Googley Eyes</title>
     <style>
         :root {
-            --eye-size: 100px;
-            --pupil-size: 60px;
+            --eye-size: clamp(58px, 20vw, 100px);
+            --pupil-size: calc(var(--eye-size) * 0.6);
             --background-color: #f6cb4a;
-            --mouth-width: 400px;
-            --mouth-height: 200px;
+            --mouth-width: min(88vw, 400px);
+            --mouth-height: clamp(120px, 30vw, 200px);
             --mouth-stroke: 3px;
+        }
+        html {
+            color-scheme: only light;
         }
         body {
             background-color: var(--background-color);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100dvh;
             margin: 0;
         }
         .face {
             display: flex;
             flex-direction: column;
             align-items: center;
+            forced-color-adjust: none;
+            -webkit-forced-color-adjust: none;
         }
         .eyes {
             display: flex;
+            gap: clamp(12px, 7vw, 80px);
         }
         .eye {
             width: var(--eye-size);
             height: var(--eye-size);
-            background-color: white;
+            background-color: #fafafa;
             border-radius: 50%;
-            margin: 0 40px;
             position: relative;
             overflow: hidden;
+            forced-color-adjust: none;
+            -webkit-forced-color-adjust: none;
         }
         .pupil {
             width: var(--pupil-size);
@@ -45,9 +55,12 @@
             top: calc((var(--eye-size) - var(--pupil-size)) / 2);
             left: calc((var(--eye-size) - var(--pupil-size)) / 2);
             transition: transform 0.1s;
+            forced-color-adjust: none;
+            -webkit-forced-color-adjust: none;
         }
         .mouth {
             margin-top: 20px;
+            width: var(--mouth-width);
         }
         .mouth svg {
             width: var(--mouth-width);
@@ -57,6 +70,15 @@
             fill: none;
             stroke: black;
             stroke-width: var(--mouth-stroke);
+            forced-color-adjust: none;
+            -webkit-forced-color-adjust: none;
+        }
+
+        @media (max-width: 420px) {
+            :root {
+                --mouth-height: clamp(90px, 28vw, 130px);
+                --mouth-stroke: 2.5px;
+            }
         }
     </style>
 </head>
@@ -74,20 +96,25 @@
     </div>
     <script>
         const eyes = document.querySelectorAll('.eye');
-        document.addEventListener('mousemove', (event) => {
+
+        function updateEyes(clientX, clientY) {
             eyes.forEach(eye => {
                 const pupil = eye.querySelector('.pupil');
                 const rect = eye.getBoundingClientRect();
                 const eyeCenterX = rect.left + rect.width / 2;
                 const eyeCenterY = rect.top + rect.height / 2;
-                const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
+                const angle = Math.atan2(clientY - eyeCenterY, clientX - eyeCenterX);
                 const maxDistanceX = (rect.width - pupil.offsetWidth) / 2;
                 const maxDistanceY = (rect.height - pupil.offsetHeight) / 2;
                 const pupilX = Math.cos(angle) * maxDistanceX;
                 const pupilY = Math.sin(angle) * maxDistanceY;
                 pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
             });
-        });
+        }
+
+        document.addEventListener('pointermove', (event) => {
+            updateEyes(event.clientX, event.clientY);
+        }, { passive: true });
 
         // Combined Parameters
         const wiggleIntervalSecs = 5;
