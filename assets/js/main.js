@@ -15,9 +15,8 @@ if (emailEl) {
     });
 }
 
-// Theme toggle. Pre-paint script in index.html already applied the resolved
-// theme to <html data-theme>. Here we sync the icon, wire the click handler,
-// and follow system changes.
+// Theme toggle. Pre-paint script in index.html applies the initial theme from
+// system preference. Here we keep switching explicit and non-persistent.
 const themeBtn = document.getElementById("theme-toggle");
 if (themeBtn) {
     const sunIcon = "☀";
@@ -34,11 +33,7 @@ if (themeBtn) {
             ? "dark"
             : "light";
     const applyTheme = (next) => {
-        if (next === "dark") {
-            document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-            document.documentElement.removeAttribute("data-theme");
-        }
+        document.documentElement.setAttribute("data-theme", next);
         paint(next);
     };
     paint(currentTheme());

@@ -45,22 +45,9 @@ p {
     margin: 0 0 var(--sp-4);
 }
 
-/* Pin link colors to the classic browser defaults so they look identical
- * in light and dark mode. .btn overrides these with its own colors. */
+/* Keep neutral link defaults. .btn overrides its own colors. */
 a {
     text-underline-offset: 3px;
-}
-
-a:link {
-    color: #0000ee;
-}
-
-a:visited {
-    color: #551a8b;
-}
-
-a:active {
-    color: #ff0000;
 }
 
 a:focus-visible,
