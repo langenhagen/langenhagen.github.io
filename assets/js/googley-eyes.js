@@ -80,13 +80,20 @@ export function initGoogleyEyes(root) {
 
     if (!reduceMotion) {
         const updateCubeTilt = (event) => {
+            // Normalize pointer position against the viewport, but offset the
+            // zero point to the cube's center. This preserves the old "max
+            // tilt at window edges" feel while keeping the cube centered
+            // (zero tilt) when the pointer is over its center.
+            const rect = cube.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
             const nx = Math.max(
                 -1,
-                Math.min(1, (event.clientX / window.innerWidth) * 2 - 1)
+                Math.min(1, (event.clientX - cx) / (window.innerWidth / 2))
             );
             const ny = Math.max(
                 -1,
-                Math.min(1, (event.clientY / window.innerHeight) * 2 - 1)
+                Math.min(1, (event.clientY - cy) / (window.innerHeight / 2))
             );
             cube.style.setProperty(
                 "--cube-tilt-x",
