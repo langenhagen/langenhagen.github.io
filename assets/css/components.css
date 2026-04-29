@@ -277,6 +277,8 @@
     background: var(--page-bg);
     color: var(--text);
     cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
     font-size: 16px;
     line-height: 1;
     z-index: 100;
