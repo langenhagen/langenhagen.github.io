@@ -307,3 +307,13 @@
     background: #1a1208;
     color: #f6cb4a;
 }
+
+.footer-egg--blue {
+    background: #2563c4;
+    color: #e6f0ff;
+}
+
+.footer-egg--blue:hover {
+    background: #e6f0ff;
+    color: #2563c4;
+}
