@@ -256,7 +256,7 @@
 @media (prefers-reduced-motion: reduce) {
     .googley-cube {
         transition: none;
-        transform: rotateX(var(--cube-base-x)) rotateY(var(--cube-base-y));
+        transform: rotateX(calc(var(--cube-base-x) + var(--cube-tilt-x))) rotateY(calc(var(--cube-base-y) + var(--cube-tilt-y)));
     }
 
     .googley-pupil {
